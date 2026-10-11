@@ -53,12 +53,17 @@
 
         .hero { min-height: 100vh; position: relative; display: flex; align-items: center; padding: 140px 0 80px; overflow: hidden; }
         .hero-bg { position: absolute; inset: 0; background: url('https://i.ibb.co/6cJTq7b8/author.jpg') right center / cover no-repeat; z-index: 0; }
-        .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(247, 238, 225, 0.98) 0%, rgba(247, 238, 225, 0.95) 25%, rgba(247, 238, 225, 0.7) 45%, rgba(247, 238, 225, 0.2) 70%, transparent 90%); }
-        .hero-content { position: relative; z-index: 1; max-width: 620px; padding: 0 40px; }
+        /* УЛУЧШЕННЫЙ СВЕТЛЫЙ ГРАДИЕНТ ДЛЯ ЧИТАЕМОСТИ НА ТЕЛЕФОНЕ */
+        .hero-bg::after { 
+            content: ''; 
+            position: absolute; 
+            inset: 0; 
+            background: linear-gradient(90deg, rgba(247, 238, 225, 0.98) 0%, rgba(247, 238, 225, 0.95) 30%, rgba(247, 238, 225, 0.85) 50%, rgba(247, 238, 225, 0.5) 75%, transparent 100%); 
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 620px; padding: 0 40px; text-shadow: 0 2px 8px rgba(247, 238, 225, 0.5); }
         .hero-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-soft); margin-bottom: 20px; display: block; }
         .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-style: italic; font-weight: 400; margin-bottom: 24px; line-height: 1.1; }
         
-        /* УВЕЛИЧЕННАЯ И ВЫРАЗИТЕЛЬНАЯ ФРАЗА */
         .hero-quote { 
             font-family: 'Cormorant Garamond', serif; 
             font-size: clamp(1.4rem, 2.5vw, 1.85rem); 
@@ -68,12 +73,14 @@
             line-height: 1.5; 
             border-left: 3px solid var(--gold-light);
             padding-left: 24px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px 24px;
+            border-radius: 12px;
         }
         
         .hero-text { font-size: 1.05rem; color: var(--text-soft); margin-bottom: 36px; line-height: 1.7; }
         .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
         
-        /* УВЕЛИЧЕННАЯ РУКОПИСНАЯ НАДПИСЬ */
         .hero-handwriting { 
             position: absolute; 
             right: 8%; 
@@ -94,16 +101,7 @@
         section { padding: 100px 0; position: relative; }
         .section-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-light); margin-bottom: 12px; display: block; }
 
-        /* ФОНОВЫЕ ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ */
-        .bg-texture {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            opacity: 0.06;
-            background-size: cover;
-            background-position: center;
-            pointer-events: none;
-        }
+        .bg-texture { position: absolute; inset: 0; z-index: 0; opacity: 0.06; background-size: cover; background-position: center; pointer-events: none; }
 
         .visual-strip { background: var(--bg-light); padding: 40px 0; border-top: 1px solid rgba(59, 42, 32, 0.05); border-bottom: 1px solid rgba(59, 42, 32, 0.05); position: relative; overflow: hidden; }
         .visual-strip-inner { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; text-align: center; position: relative; z-index: 1; }
@@ -313,7 +311,7 @@
         <li><a href="#pricing">Тарифы</a></li>
         <li><a href="#faq">Вопросы</a></li>
     </ul>
-    <a href="https://t.me/choicemeofficialbot?start=landing" class="btn btn-gold nav-cta-desktop" target="_blank">Выбрать себя</a>
+    <a href="https://t.me/choicemeofficialbot?start=landing" class="btn btn-gold nav-cta-desktop tg-link">Выбрать себя</a>
     <button class="mobile-toggle" aria-label="Меню"><span></span><span></span><span></span></button>
 </nav>
 
@@ -328,7 +326,7 @@
         Иногда мы настолько привыкаем заботиться обо всём вокруг, что перестаём замечать собственные потребности.<br><br>
         «Я выбираю себя» — Путеводитель, который помогает постепенно вернуть внимание к себе и сделать заботу о себе частью обычной жизни.</p>
         <div class="hero-buttons">
-            <a href="https://t.me/choicemeofficialbot?start=landing" class="btn btn-gold" target="_blank">Начать путь <span class="btn-arrow">→</span></a>
+            <a href="https://t.me/choicemeofficialbot?start=landing" class="btn btn-gold tg-link">Начать путь <span class="btn-arrow">→</span></a>
             <a href="#program" class="btn btn-outline">Что внутри</a>
         </div>
     </div>
@@ -350,7 +348,6 @@
 </div>
 
 <section class="znakomo">
-    <!-- Мягкий фоновый элемент -->
     <div class="bg-texture" style="background-image: url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1200&q=80'); background-position: center right;"></div>
     <div class="container">
         <div class="znakomo-header reveal">
@@ -382,7 +379,6 @@
 </section>
 
 <section class="author-story">
-    <!-- Мягкий фоновый элемент -->
     <div class="bg-texture" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80'); filter: blur(2px);"></div>
     <div class="container">
         <div class="story-content reveal">
@@ -654,7 +650,7 @@
                 <span class="section-label">Что внутри</span>
                 <h2>Внутри всё просто: выбираете раздел и двигаетесь в своём темпе</h2>
                 <p>Это не гонка и не обязательная последовательность. Навигация помогает видеть систему целиком и отмечать свои маленькие шаги.</p>
-                <a href="https://t.me/choicemeofficialbot?start=landing" class="btn btn-gold" target="_blank">Начать путь <span class="btn-arrow">→</span></a>
+                <a href="https://t.me/choicemeofficialbot?start=landing" class="btn btn-gold tg-link">Начать путь <span class="btn-arrow">→</span></a>
                 <p class="telegram-note">Все семь модулей открываются сразу после оплаты. Вы можете начать с первого или открыть тот, который нужен вам сейчас.</p>
             </div>
             <div class="telegram-mockup reveal">
@@ -744,7 +740,7 @@
                 <li>Закрытый Telegram-канал с полным путеводителем, доступ навсегда</li>
                 <li>Отдельный чат для общения и поддержки участниц: он делает путь живым</li>
             </ul>
-            <a href="https://t.me/choicemeofficialbot?start=landing" class="btn btn-gold" target="_blank">Начать путь</a>
+            <a href="https://t.me/choicemeofficialbot?start=landing" class="btn btn-gold tg-link">Начать путь</a>
         </div>
     </div>
 </section>
@@ -808,7 +804,7 @@
     <div class="final-cta-content">
         <h2>Ваш следующий шаг</h2>
         <p class="final-cta-text">Не нужно начинать новую жизнь. Можно начать с одного шага.<br>Выберите раздел, который нужен вам сейчас. Остальное никуда не денется.</p>
-        <a href="https://t.me/choicemeofficialbot?start=landing" class="btn" target="_blank">Начать путь <span class="btn-arrow">→</span></a>
+        <a href="https://t.me/choicemeofficialbot?start=landing" class="btn tg-link">Начать путь <span class="btn-arrow">→</span></a>
         <p class="final-note">После нажатия вы перейдёте в Telegram-бота для оплаты и получения доступа.</p>
     </div>
 </section>
@@ -823,13 +819,53 @@
 </footer>
 
 <script>
-const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+// Анимации при прокрутке
+const observer = new IntersectionObserver(entries => { 
+    entries.forEach(entry => { 
+        if (entry.isIntersecting) entry.target.classList.add('visible'); 
+    }); 
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-window.addEventListener('scroll', () => { const nav = document.querySelector('.nav'); nav.style.boxShadow = window.scrollY > 50 ? '0 4px 24px rgba(59,42,32,0.1)' : '0 2px 8px rgba(59,42,32,0.06)'; });
-document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { const href = this.getAttribute('href'); if (href !== '#') { e.preventDefault(); const target = document.querySelector(href); if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }); });
-const mobileToggle = document.querySelector('.mobile-toggle'), navMenu = document.querySelector('.nav-menu');
-mobileToggle.addEventListener('click', () => { if (navMenu.style.display === 'flex') { navMenu.style.display = 'none'; } else { navMenu.style.display = 'flex'; navMenu.style.flexDirection = 'column'; navMenu.style.position = 'absolute'; navMenu.style.top = '100%'; navMenu.style.left = '0'; navMenu.style.right = '0'; navMenu.style.background = 'white'; navMenu.style.padding = '20px'; navMenu.style.borderRadius = '16px'; navMenu.style.marginTop = '8px'; navMenu.style.boxShadow = '0 4px 24px rgba(59,42,32,0.1)'; } });
 
+// Тень навигации при скролле
+window.addEventListener('scroll', () => { 
+    const nav = document.querySelector('.nav'); 
+    nav.style.boxShadow = window.scrollY > 50 ? '0 4px 24px rgba(59,42,32,0.1)' : '0 2px 8px rgba(59,42,32,0.06)'; 
+});
+
+// Плавная прокрутка к якорям
+document.querySelectorAll('a[href^="#"]').forEach(anchor => { 
+    anchor.addEventListener('click', function(e) { 
+        const href = this.getAttribute('href'); 
+        if (href !== '#') { 
+            e.preventDefault(); 
+            const target = document.querySelector(href); 
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+        } 
+    }); 
+});
+
+// Мобильное меню
+const mobileToggle = document.querySelector('.mobile-toggle'), navMenu = document.querySelector('.nav-menu');
+mobileToggle.addEventListener('click', () => { 
+    if (navMenu.style.display === 'flex') { 
+        navMenu.style.display = 'none'; 
+    } else { 
+        navMenu.style.display = 'flex'; 
+        navMenu.style.flexDirection = 'column'; 
+        navMenu.style.position = 'absolute'; 
+        navMenu.style.top = '100%'; 
+        navMenu.style.left = '0'; 
+        navMenu.style.right = '0'; 
+        navMenu.style.background = 'white'; 
+        navMenu.style.padding = '20px'; 
+        navMenu.style.borderRadius = '16px'; 
+        navMenu.style.marginTop = '8px'; 
+        navMenu.style.boxShadow = '0 4px 24px rgba(59,42,32,0.1)'; 
+    } 
+});
+
+// Раскрытие модулей
 function toggleModule(header) {
     const item = header.parentElement;
     const isActive = item.classList.contains('active');
@@ -837,16 +873,7 @@ function toggleModule(header) {
     if (!isActive) item.classList.add('active');
 }
 
+// Раскрытие FAQ
 function toggleFaq(question) {
     const item = question.parentElement;
-    const isActive = item.classList.contains('active');
-    document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('active'));
-    if (!isActive) item.classList.add('active');
-}
-
-const ctaButtons = document.querySelectorAll('a[href*="t.me/choicemeofficialbot"]');
-console.log(`QA: ${ctaButtons.length} CTA buttons → Telegram bot`);
-ctaButtons.forEach(btn => { btn.setAttribute('target', '_blank'); btn.setAttribute('rel', 'noopener noreferrer'); });
-</script>
-</body>
-</html>
+  
