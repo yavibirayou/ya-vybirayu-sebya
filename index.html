@@ -36,7 +36,6 @@
         .container { max-width: 1280px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 1; }
         a { text-decoration: none; color: inherit; }
 
-        /* NAV */
         .nav { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); max-width: 1240px; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: var(--radius-full); padding: 14px 28px; display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm); transition: all 0.3s; }
         .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; font-weight: 500; }
         .nav-menu { display: flex; gap: 28px; list-style: none; }
@@ -52,34 +51,10 @@
         .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
         .mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--text); margin: 5px 0; transition: 0.3s; }
 
-        /* HERO С ФОНОМ НА ВСЁ ПОЛОТНО */
-        .hero { 
-            min-height: 100vh; 
-            position: relative; 
-            display: flex; 
-            align-items: center; 
-            padding: 140px 0 80px; 
-            overflow: hidden;
-        }
-        .hero-bg { 
-            position: absolute; 
-            inset: 0; 
-            background: url('hero-bg.jpg') center center / cover no-repeat; 
-            z-index: 0; 
-        }
-        .hero-bg::after { 
-            content: ''; 
-            position: absolute; 
-            inset: 0; 
-            background: linear-gradient(90deg, 
-                rgba(247, 238, 225, 0.98) 0%, 
-                rgba(247, 238, 225, 0.92) 25%, 
-                rgba(247, 238, 225, 0.75) 45%, 
-                rgba(247, 238, 225, 0.35) 70%, 
-                rgba(247, 238, 225, 0.1) 90%, 
-                transparent 100%
-            ); 
-        }
+        /* HERO */
+        .hero { min-height: 100vh; position: relative; display: flex; align-items: center; padding: 140px 0 80px; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; background: url('hero-bg.jpg') center center / cover no-repeat; z-index: 0; }
+        .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(247, 238, 225, 0.98) 0%, rgba(247, 238, 225, 0.92) 25%, rgba(247, 238, 225, 0.75) 45%, rgba(247, 238, 225, 0.35) 70%, rgba(247, 238, 225, 0.1) 90%, transparent 100%); }
         .hero-content { position: relative; z-index: 1; max-width: 620px; padding: 0 40px; }
         .hero-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-soft); margin-bottom: 20px; display: block; }
         .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-style: italic; font-weight: 400; margin-bottom: 24px; line-height: 1.1; }
@@ -93,7 +68,55 @@
         section { padding: 100px 0; position: relative; }
         .section-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-light); margin-bottom: 12px; display: block; }
 
-        /* ВТОРАЯ СЕКЦИЯ С ФОНОМ НА ВСЁ ПОЛОТНО */
+        /* СЕКЦИЯ С ФОНОМ ГОР */
+        .mountains-section {
+            position: relative;
+            padding: 120px 0;
+            overflow: hidden;
+        }
+        .mountains-bg {
+            position: absolute;
+            inset: 0;
+            background: url('mountains-bg.jpg') center center / cover no-repeat;
+            z-index: 0;
+        }
+        .mountains-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, 
+                rgba(255, 255, 255, 0.95) 0%, 
+                rgba(255, 255, 255, 0.88) 30%, 
+                rgba(255, 255, 255, 0.75) 60%, 
+                rgba(255, 255, 255, 0.55) 100%
+            );
+        }
+
+        /* СЕКЦИЯ С ФОНОМ МЕДИТАЦИИ */
+        .meditation-section {
+            position: relative;
+            padding: 120px 0;
+            overflow: hidden;
+        }
+        .meditation-bg {
+            position: absolute;
+            inset: 0;
+            background: url('meditation-bg.jpg') center center / cover no-repeat;
+            z-index: 0;
+        }
+        .meditation-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, 
+                rgba(247, 238, 225, 0.95) 0%, 
+                rgba(247, 238, 225, 0.85) 35%, 
+                rgba(247, 238, 225, 0.65) 65%, 
+                rgba(247, 238, 225, 0.3) 100%
+            );
+        }
+
+        /* СЕКЦИЯ С ФОТО У ОКНА */
         .practices-section {
             position: relative;
             padding: 120px 0;
@@ -110,14 +133,13 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(90deg, 
-                rgba(247, 238, 225, 0.95) 0%, 
-                rgba(247, 238, 225, 0.88) 30%, 
-                rgba(247, 238, 225, 0.7) 55%, 
-                rgba(247, 238, 225, 0.4) 80%, 
+                rgba(247, 238, 225, 0.98) 0%, 
+                rgba(247, 238, 225, 0.92) 30%, 
+                rgba(247, 238, 225, 0.75) 55%, 
+                rgba(247, 238, 225, 0.45) 80%, 
                 rgba(247, 238, 225, 0.15) 100%
             );
         }
-        .practices-section .container { position: relative; z-index: 1; }
 
         .visual-strip { background: var(--bg-light); padding: 40px 0; border-top: 1px solid rgba(59, 42, 32, 0.05); border-bottom: 1px solid rgba(59, 42, 32, 0.05); }
         .visual-strip-inner { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; text-align: center; }
@@ -150,7 +172,6 @@
         .author-image { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
         .author-badge { position: absolute; bottom: -20px; right: -20px; background: var(--white); padding: 16px 24px; border-radius: var(--radius); box-shadow: var(--shadow-lg); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; color: var(--gold-dark); }
         .author-content h3 { font-size: 2rem; margin-bottom: 16px; font-style: italic; }
-        .author-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--gold-dark); margin-bottom: 24px; }
         .author-text { color: var(--text-soft); line-height: 1.8; margin-bottom: 16px; }
         .author-note { padding: 24px; background: var(--bg-light); border-left: 3px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; font-style: italic; color: var(--text); margin-top: 32px; line-height: 1.8; }
 
@@ -209,7 +230,6 @@
         .how-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--gold-dark); margin-bottom: 16px; }
         .how-text { font-size: 0.95rem; color: var(--text-soft); line-height: 1.7; margin: 0; }
 
-        .telegram-preview { background: var(--bg); }
         .telegram-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .telegram-content h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 16px; font-style: italic; }
         .telegram-content > p { color: var(--text-soft); font-size: 1.05rem; margin-bottom: 32px; }
@@ -311,8 +331,10 @@
             .btn { width: 100%; justify-content: center; }
             .hero-buttons { flex-direction: column; }
             .pricing-card-header { flex-direction: column; align-items: flex-start; }
-            /* На мобильных фоны показываются с более сильным затемнением для читаемости */
+            /* На мобильных фоны затемняются сильнее для читаемости */
             .hero-bg::after { background: linear-gradient(90deg, rgba(247, 238, 225, 0.98) 0%, rgba(247, 238, 225, 0.95) 40%, rgba(247, 238, 225, 0.85) 70%, rgba(247, 238, 225, 0.6) 100%); }
+            .mountains-bg::after { background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 50%, rgba(255, 255, 255, 0.8) 100%); }
+            .meditation-bg::after { background: linear-gradient(90deg, rgba(247, 238, 225, 0.98) 0%, rgba(247, 238, 225, 0.92) 50%, rgba(247, 238, 225, 0.8) 100%); }
             .practices-bg::after { background: linear-gradient(90deg, rgba(247, 238, 225, 0.98) 0%, rgba(247, 238, 225, 0.92) 50%, rgba(247, 238, 225, 0.75) 100%); }
         }
         section[id] { scroll-margin-top: 100px; }
@@ -333,7 +355,7 @@
     <button class="mobile-toggle" aria-label="Меню"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- HERO С ФОТОМ НА ЗАКАТЕ -->
+<!-- HERO С ФОТО ЖЕНЩИНЫ НА ЗАКАТЕ -->
 <section class="hero" id="top">
     <div class="hero-bg"></div>
     <div class="hero-content">
@@ -363,7 +385,9 @@
     </div>
 </div>
 
-<section class="znakomo">
+<!-- СЕКЦИЯ "ЗНАКОМО?" С ФОНОМ ГОР -->
+<section class="mountains-section">
+    <div class="mountains-bg"></div>
     <div class="container">
         <div class="znakomo-header">
             <h2>Знакомо?</h2>
@@ -393,7 +417,9 @@
     </div>
 </section>
 
-<section class="author-story">
+<!-- СЕКЦИЯ "ПОЧЕМУ Я ЭТО СОЗДАЛА" С ФОНОМ МЕДИТАЦИИ -->
+<section class="meditation-section">
+    <div class="meditation-bg"></div>
     <div class="container">
         <div class="story-content">
             <span class="section-label">Почему я это создала</span>
@@ -573,314 +599,4 @@
                     <div class="module-number">05</div>
                     <div class="module-content-wrapper">
                         <h3 class="module-title">Спокойнее относиться к питанию</h3>
-                        <p class="module-subtitle">Принцип тарелки, голод и готовые идеи</p>
-                    </div>
-                    <div class="module-toggle">↓</div>
-                </div>
-                <div class="module-body">
-                    <div class="module-body-inner">
-                        <ul class="module-practices">
-                            <li>Принцип тарелки вместо подсчёта калорий. Физический и эмоциональный голод.</li>
-                            <li>Завтраки, обеды и ужины — готовые идеи для повседневного меню.</li>
-                            <li>+ ещё 2 практики внутри Путеводителя</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-header" onclick="toggleModule(this)">
-                    <div class="module-number">06</div>
-                    <div class="module-content-wrapper">
-                        <h3 class="module-title">Вернуть тело в движение</h3>
-                        <p class="module-subtitle">Тренировки, сила, осанка и мобильность</p>
-                    </div>
-                    <div class="module-toggle">↓</div>
-                </div>
-                <div class="module-body">
-                    <div class="module-body-inner">
-                        <ul class="module-practices">
-                            <li>Инструмент, без которого сложно идти дальше — начинаем с подготовки себя к движению.</li>
-                            <li>10 минут, чтобы подготовить тело к работе — лёгкое кардио и суставная разминка.</li>
-                            <li>+ ещё 3 практики внутри Путеводителя</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-header" onclick="toggleModule(this)">
-                    <div class="module-number">07</div>
-                    <div class="module-content-wrapper">
-                        <h3 class="module-title">Вдохновение для продолжения</h3>
-                        <p class="module-subtitle">Книги, фильмы и финальные материалы</p>
-                    </div>
-                    <div class="module-toggle">↓</div>
-                </div>
-                <div class="module-body">
-                    <div class="module-body-inner">
-                        <ul class="module-practices">
-                            <li>Вдохновение для роста: книги о саморазвитии, мышлении, границах и женской силе.</li>
-                            <li>Подборка фильмов о пути к себе, мотивации и трансформации.</li>
-                            <li>+ ещё 2 практики внутри Путеводителя</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="how-it-works" id="format">
-    <div class="container">
-        <div class="how-it-works-header">
-            <span class="section-label">Как это устроено</span>
-            <h2>Не ещё один марафон, который нужно успеть</h2>
-            <p>Путеводитель остаётся с вами. Можно читать, пробовать, пропускать и возвращаться — без отчётов и гонки за идеальным прохождением.</p>
-        </div>
-        <div class="how-grid">
-            <div class="how-card">
-                <h3 class="how-title">Telegram</h3>
-                <p class="how-subtitle">Весь путь — в одном месте</p>
-                <p class="how-text">Все семь модулей находятся в закрытом Telegram-канале. Рядом — отдельный чат для общения. Вы проходите материалы в своём темпе, а доступ сохраняется навсегда.</p>
-            </div>
-            <div class="how-card">
-                <h3 class="how-title">Практика</h3>
-                <p class="how-subtitle">Не только теория</p>
-                <p class="how-text">Тесты, дневники, протоколы, скрипты, дыхание, медитация, тренировки, меню, рецепты и готовые рекомендации — материалы можно сразу применять в обычной жизни.</p>
-            </div>
-            <div class="how-card">
-                <h3 class="how-title">Темп</h3>
-                <p class="how-subtitle">Без гонки и «идеального прохождения»</p>
-                <p class="how-text">Не нужно успеть всё за определённый срок. Можно пройти путь целиком или возвращаться к отдельным модулям тогда, когда они становятся актуальны.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- СЕКЦИЯ С ФОТО У ОКНА -->
-<section class="practices-section" id="cabinet">
-    <div class="practices-bg"></div>
-    <div class="container">
-        <div class="telegram-grid">
-            <div class="telegram-content">
-                <span class="section-label">Что внутри</span>
-                <h2>Внутри всё просто: выбираете раздел и двигаетесь в своём темпе</h2>
-                <p>Это не гонка и не обязательная последовательность. Навигация помогает видеть систему целиком и отмечать свои маленькие шаги.</p>
-                <a href="https://t.me/choicemeofficialbot?start=landing" class="btn btn-gold tg-link">Начать путь <span class="btn-arrow">→</span></a>
-                <p class="telegram-note">Все семь модулей открываются сразу после оплаты. Вы можете начать с первого или открыть тот, который нужен вам сейчас.</p>
-            </div>
-            <div class="telegram-mockup">
-                <div class="telegram-header">
-                    <div class="telegram-header-icon">✈</div>
-                    <div class="telegram-header-text">Telegram · Я выбираю себя<small>0/7 разделов пройдено</small></div>
-                </div>
-                <div class="telegram-progress">✦ Начните с первого шага</div>
-                <ul class="telegram-modules">
-                    <li class="done">✓ 01. Вернуть себя себе Пройдено</li>
-                    <li class="done">✓ 02. Начать день с себя Пройдено</li>
-                    <li class="current">03. Тренировки и движение Сейчас</li>
-                    <li class="soon">04. Массаж и уход за телом Скоро</li>
-                    <li class="soon">05. Кожа, ногти, волосы Скоро</li>
-                    <li class="soon">06. Вернуть тело в движение и рецепты Скоро</li>
-                    <li class="soon">07. Вдохновение для продолжения Скоро</li>
-                </ul>
-                <div class="telegram-daily">
-                    <h4>Ваши ежедневные отметки</h4>
-                    <ul>
-                        <li>Утренняя медитация — 3 минуты</li>
-                        <li>Три вещи, за которые я благодарна</li>
-                        <li>Аффирмация дня</li>
-                        <li>Лёгкая зарядка — 5 минут</li>
-                    </ul>
-                </div>
-                <p class="telegram-note" style="margin-top: 24px; font-size: 0.85rem;">Так выглядит ваш личный дневник рядом с уроками — ведите его в заметках телефона или на бумаге, в своём тёплом темпе.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="what-you-get">
-    <div class="container">
-        <div class="what-you-get-header">
-            <span class="section-label">Что останется с вами</span>
-            <h2>Не обещания, а то, на что можно опираться</h2>
-        </div>
-        <div class="get-grid">
-            <div class="get-card">
-                <h3 class="get-title">Внутреннее состояние</h3>
-                <p class="get-text">Лучше понимать, почему вы откладываете себя, замечать свои потребности и учиться ставить границы.</p>
-            </div>
-            <div class="get-card">
-                <h3 class="get-title">Ежедневные практики</h3>
-                <p class="get-text">Собрать собственный утренний ритуал и несколько коротких практик, к которым легко возвращаться.</p>
-            </div>
-            <div class="get-card">
-                <h3 class="get-title">Тело и питание</h3>
-                <p class="get-text">Двигаться, ухаживать за собой и организовывать питание без идеи, что всё нужно делать идеально.</p>
-            </div>
-            <div class="get-card">
-                <h3 class="get-title">Система</h3>
-                <p class="get-text">Иметь под рукой материалы, к которым можно возвращаться тогда, когда вам нужна поддержка.</p>
-            </div>
-        </div>
-        <div class="author-quote-final">
-            <blockquote>«Я собрала в этот путеводитель всё, что реально сработало для меня за годы пути — без лишнего и без давления.»</blockquote>
-            <cite>— Леночка Кузовлёва, автор</cite>
-        </div>
-        <div class="what-you-get-note">
-            <p>Не обязательно менять всё. Иногда достаточно заметить одну свою потребность и наконец дать ей место.<br>К разным разделам можно возвращаться в разные периоды жизни — потому что вам не всегда нужно одно и то же.</p>
-        </div>
-    </div>
-</section>
-
-<section class="pricing" id="pricing">
-    <div class="container">
-        <div class="pricing-header">
-            <span class="section-label">Доступ</span>
-            <h2>Всё необходимое — в одном Путеводителе</h2>
-            <p>Это не марафон с дедлайнами и не курс с расписанием. Это путеводитель, к которому можно возвращаться в своём темпе. Внутри — 7 модулей, дневник на 30 дней и практические материалы для повседневной заботы о себе.<br><br>Не нужно успевать пройти всё сразу. Доступ остаётся с вами, чтобы возвращаться тогда, когда это действительно нужно.</p>
-        </div>
-        <div class="pricing-card">
-            <div class="pricing-card-header">
-                <div>
-                    <div class="pricing-card-title">Путеводитель</div>
-                    <p style="color: var(--text-soft); margin-top: 8px;">Полный доступ ко всем 7 модулям</p>
-                </div>
-                <div class="pricing-card-price">3 990 ₽</div>
-            </div>
-            <ul class="pricing-features">
-                <li>Все 7 модулей — от внутреннего состояния и границ до питания, движения и вдохновения</li>
-                <li>Шаблоны, чек-листы и рецепты к материалам, где они нужны</li>
-                <li>Личный дневник на 30 дней — небольшие практики, отметки и вечерние вопросы</li>
-                <li>Закрытый Telegram-канал с полным путеводителем, доступ навсегда</li>
-                <li>Отдельный чат для общения и поддержки участниц: он делает путь живым</li>
-            </ul>
-            <a href="https://t.me/choicemeofficialbot?start=landing" class="btn btn-gold tg-link">Начать путь</a>
-        </div>
-    </div>
-</section>
-
-<section class="faq" id="faq">
-    <div class="container">
-        <div class="faq-header">
-            <span class="section-label">Вопросы</span>
-            <h2>Отвечаем заранее</h2>
-        </div>
-        <div class="faq-list">
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>У меня правда нет времени</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Вам не нужно выделять час в день. Внутри много коротких практик, а сам путеводитель можно проходить в своём темпе.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Я уже пробовала похожее и бросала — чем это отличается?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Здесь нет требования пройти всё идеально: материалы можно брать небольшими шагами и возвращаться к ним снова.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Мне обязательно выполнять все практики?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Нет. Это не список обязательных заданий. Вы выбираете то, что подходит вам сейчас, и постепенно находите свой способ заботиться о себе.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Это программа для похудения?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Похудение не является основной целью путеводителя. Здесь фокус на отношении к себе, движении, питании, уходе и ежедневной заботе о себе.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Это про «просто полюбить себя» и эзотерику?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Нет. Внутри конкретные инструменты: «Колесо самоценности», протокол «СТОП», скрипты границ, тесты, практики, тренировки, уход и питание.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Мне обязательно тренироваться?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Нет. Тренировки — одна из частей системы. Вы можете начать с внутренней работы, утренних практик, питания или ухода.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>А если я пропущу несколько дней?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Ничего. Это не марафон с отчётами. Просто возвращаетесь к путеводителю тогда, когда готовы.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Нужна ли подготовка или опыт?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Нет. Материалы рассчитаны на самостоятельное прохождение и объясняются пошагово.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>В каком формате я получу доступ?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Путеводитель находится в закрытом Telegram-канале. Рядом есть отдельный чат для общения. Доступ к материалам сохраняется без ограничения по времени.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Материалы останутся у меня навсегда?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Да, доступ к материалам сохраняется без ограничения по времени.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Когда я замечу изменения?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">У каждой по-разному. Цель путеводителя — не обещать конкретный результат за определённое число дней, а помочь выстроить действия, к которым вы сможете возвращаться регулярно.</div></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="final-cta">
-    <div class="final-cta-content">
-        <h2>Ваш следующий шаг</h2>
-        <p class="final-cta-text">Не нужно начинать новую жизнь. Можно начать с одного шага.<br>Выберите раздел, который нужен вам сейчас. Остальное никуда не денется.</p>
-        <a href="https://t.me/choicemeofficialbot?start=landing" class="btn tg-link">Начать путь <span class="btn-arrow">→</span></a>
-        <p class="final-note">После нажатия вы перейдёте в Telegram-бота для оплаты и получения доступа.</p>
-    </div>
-</section>
-
-<footer class="footer">
-    <div class="container">
-        <div class="footer-top">
-            <div class="footer-logo">Путеводитель Я выбираю себя</div>
-        </div>
-        <div class="footer-copy">© 2026 · платформа для женщин, которые возвращаются к себе</div>
-    </div>
-</footer>
-
-<script>
-// Раскрытие модулей
-function toggleModule(header) {
-    const item = header.parentElement;
-    const isActive = item.classList.contains('active');
-    document.querySelectorAll('.module-item').forEach(m => m.classList.remove('active'));
-    if (!isActive) item.classList.add('active');
-}
-
-// Раскрытие FAQ
-function toggleFaq(question) {
-    const item = question.parentElement;
-    const isActive = item.classList.contains('active');
-    document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('active'));
-    if (!isActive) item.classList.add('active');
-}
-
-// Мобильное меню
-const mobileToggle = document.querySelector('.mobile-toggle');
-const navMenu = document.querySelector('.nav-menu');
-mobileToggle.addEventListener('click', () => {
-    if (navMenu.style.display === 'flex') {
-        navMenu.style.display = 'none';
-    } else {
-        navMenu.style.display = 'flex';
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '100%';
-        navMenu.style.left = '0';
-        navMenu.style.right = '0';
-        navMenu.style.background = 'white';
-        navMenu.style.padding = '20px';
-        navMenu.style.borderRadius = '16px';
-        navMenu.style.marginTop = '8px';
-        navMenu.style.boxShadow = '0 4px 24px rgba(59,42,32,0.1)';
-    }
-});
-
-// Умные ссылки на Telegram (работают и на ПК, и на телефоне)
-document.querySelectorAll('.tg-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.location.href = 'tg://resolve?domain=choicemeofficialbot&start=landing';
-        setTimeout(() => {
-            window.open('https://t.me/choicemeofficialbot?start=landing', '_blank');
-        }, 1500);
-    });
-});
-</script>
-
-</body>
-</html>
+                       
