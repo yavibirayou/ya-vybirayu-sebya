@@ -36,6 +36,7 @@
         .container { max-width: 1280px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 1; }
         a { text-decoration: none; color: inherit; }
 
+        /* NAV */
         .nav { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); max-width: 1240px; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: var(--radius-full); padding: 14px 28px; display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm); transition: all 0.3s; }
         .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; font-weight: 500; }
         .nav-menu { display: flex; gap: 28px; list-style: none; }
@@ -51,86 +52,100 @@
         .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
         .mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--text); margin: 5px 0; transition: 0.3s; }
 
-        .hero { min-height: 100vh; position: relative; display: flex; align-items: center; padding: 140px 0 80px; overflow: hidden; }
-        .hero-bg { position: absolute; inset: 0; background: url('https://i.ibb.co/6cJTq7b8/author.jpg') right center / cover no-repeat; z-index: 0; }
-        /* УЛУЧШЕННЫЙ СВЕТЛЫЙ ГРАДИЕНТ ДЛЯ ЧИТАЕМОСТИ НА ТЕЛЕФОНЕ */
+        /* HERO С ФОНОМ НА ВСЁ ПОЛОТНО */
+        .hero { 
+            min-height: 100vh; 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            padding: 140px 0 80px; 
+            overflow: hidden;
+        }
+        .hero-bg { 
+            position: absolute; 
+            inset: 0; 
+            background: url('hero-bg.jpg') center center / cover no-repeat; 
+            z-index: 0; 
+        }
         .hero-bg::after { 
             content: ''; 
             position: absolute; 
             inset: 0; 
-            background: linear-gradient(90deg, rgba(247, 238, 225, 0.98) 0%, rgba(247, 238, 225, 0.95) 30%, rgba(247, 238, 225, 0.85) 50%, rgba(247, 238, 225, 0.5) 75%, transparent 100%); 
+            background: linear-gradient(90deg, 
+                rgba(247, 238, 225, 0.98) 0%, 
+                rgba(247, 238, 225, 0.92) 25%, 
+                rgba(247, 238, 225, 0.75) 45%, 
+                rgba(247, 238, 225, 0.35) 70%, 
+                rgba(247, 238, 225, 0.1) 90%, 
+                transparent 100%
+            ); 
         }
-        .hero-content { position: relative; z-index: 1; max-width: 620px; padding: 0 40px; text-shadow: 0 2px 8px rgba(247, 238, 225, 0.5); }
+        .hero-content { position: relative; z-index: 1; max-width: 620px; padding: 0 40px; }
         .hero-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-soft); margin-bottom: 20px; display: block; }
         .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-style: italic; font-weight: 400; margin-bottom: 24px; line-height: 1.1; }
-        
-        .hero-quote { 
-            font-family: 'Cormorant Garamond', serif; 
-            font-size: clamp(1.4rem, 2.5vw, 1.85rem); 
-            font-style: italic; 
-            color: var(--text); 
-            margin-bottom: 32px; 
-            line-height: 1.5; 
-            border-left: 3px solid var(--gold-light);
-            padding-left: 24px;
-            background: rgba(255, 255, 255, 0.7);
-            padding: 20px 24px;
-            border-radius: 12px;
-        }
-        
+        .hero-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 2.5vw, 1.85rem); font-style: italic; color: var(--text); margin-bottom: 32px; line-height: 1.5; border-left: 3px solid var(--gold-light); padding: 20px 24px; background: rgba(255, 255, 255, 0.7); border-radius: 12px; backdrop-filter: blur(10px); }
         .hero-text { font-size: 1.05rem; color: var(--text-soft); margin-bottom: 36px; line-height: 1.7; }
         .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
-        
-        .hero-handwriting { 
-            position: absolute; 
-            right: 8%; 
-            bottom: 25%; 
-            z-index: 2; 
-            font-family: 'Caveat', cursive; 
-            font-size: clamp(2.5rem, 5vw, 4.5rem); 
-            color: var(--white); 
-            text-shadow: 0 4px 20px rgba(0,0,0,0.4); 
-            transform: rotate(-6deg); 
-            line-height: 1.1; 
-            opacity: 0; 
-            animation: fadeIn 1s ease 1s forwards; 
-        }
+        .hero-handwriting { position: absolute; right: 8%; bottom: 25%; z-index: 2; font-family: 'Caveat', cursive; font-size: clamp(2.5rem, 5vw, 4.5rem); color: var(--white); text-shadow: 0 4px 20px rgba(0,0,0,0.5); transform: rotate(-6deg); line-height: 1.1; opacity: 0; animation: fadeIn 1s ease 1s forwards; }
         .hero-handwriting::after { content: '♡'; display: block; font-size: 2rem; margin-top: 8px; margin-left: 60px; }
         @keyframes fadeIn { to { opacity: 1; } }
 
         section { padding: 100px 0; position: relative; }
         .section-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-light); margin-bottom: 12px; display: block; }
 
-        .bg-texture { position: absolute; inset: 0; z-index: 0; opacity: 0.06; background-size: cover; background-position: center; pointer-events: none; }
+        /* ВТОРАЯ СЕКЦИЯ С ФОНОМ НА ВСЁ ПОЛОТНО */
+        .practices-section {
+            position: relative;
+            padding: 120px 0;
+            overflow: hidden;
+        }
+        .practices-bg {
+            position: absolute;
+            inset: 0;
+            background: url('practices-bg.jpg') center center / cover no-repeat;
+            z-index: 0;
+        }
+        .practices-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, 
+                rgba(247, 238, 225, 0.95) 0%, 
+                rgba(247, 238, 225, 0.88) 30%, 
+                rgba(247, 238, 225, 0.7) 55%, 
+                rgba(247, 238, 225, 0.4) 80%, 
+                rgba(247, 238, 225, 0.15) 100%
+            );
+        }
+        .practices-section .container { position: relative; z-index: 1; }
 
-        .visual-strip { background: var(--bg-light); padding: 40px 0; border-top: 1px solid rgba(59, 42, 32, 0.05); border-bottom: 1px solid rgba(59, 42, 32, 0.05); position: relative; overflow: hidden; }
-        .visual-strip-inner { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; text-align: center; position: relative; z-index: 1; }
+        .visual-strip { background: var(--bg-light); padding: 40px 0; border-top: 1px solid rgba(59, 42, 32, 0.05); border-bottom: 1px solid rgba(59, 42, 32, 0.05); }
+        .visual-strip-inner { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; text-align: center; }
         .visual-strip-item { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--text); }
-        .visual-strip-item span { display: block; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-style: normal; color: var(--text-soft); margin-top: 4px; }
         .visual-strip-divider { width: 1px; height: 40px; background: var(--gold-light); }
 
-        .znakomo { background: var(--white); position: relative; overflow: hidden; }
-        .znakomo-header { max-width: 700px; margin-bottom: 60px; position: relative; z-index: 1; }
+        .znakomo { background: var(--white); }
+        .znakomo-header { max-width: 700px; margin-bottom: 60px; }
         .znakomo-header h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 16px; font-style: italic; }
         .znakomo-header p { color: var(--text-soft); font-size: 1.1rem; line-height: 1.7; }
-        .znakomo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; z-index: 1; }
+        .znakomo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
         .znakomo-card { background: var(--bg-light); border-radius: var(--radius-lg); padding: 32px 24px; transition: all 0.3s; border: 1px solid rgba(184, 147, 61, 0.1); }
         .znakomo-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
         .znakomo-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-style: italic; color: var(--gold); margin-bottom: 16px; line-height: 1; }
         .znakomo-card p { font-size: 0.95rem; color: var(--text); line-height: 1.6; margin: 0; }
-        .znakomo-quote { max-width: 800px; margin: 60px auto 0; text-align: center; padding: 48px; background: linear-gradient(135deg, var(--bg-light), var(--bg)); border-radius: var(--radius-lg); position: relative; z-index: 1; border: 1px solid rgba(184, 147, 61, 0.15); }
+        .znakomo-quote { max-width: 800px; margin: 60px auto 0; text-align: center; padding: 48px; background: linear-gradient(135deg, var(--bg-light), var(--bg)); border-radius: var(--radius-lg); border: 1px solid rgba(184, 147, 61, 0.15); }
         .znakomo-quote p { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 2.5vw, 1.8rem); font-style: italic; color: var(--text); line-height: 1.5; margin: 0; }
 
-        .author-story { background: var(--bg); position: relative; overflow: hidden; }
-        .story-content { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+        .author-story { background: var(--bg); }
+        .story-content { max-width: 800px; margin: 0 auto; text-align: center; }
         .story-content h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 24px; font-style: italic; }
         .story-content p { color: var(--text-soft); font-size: 1.1rem; line-height: 1.8; margin-bottom: 24px; }
         .story-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-style: italic; color: var(--text); padding: 48px; margin: 48px 0; background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow); position: relative; }
         .story-quote::before { content: '"'; position: absolute; top: 16px; left: 24px; font-size: 4rem; color: var(--gold-light); line-height: 1; }
         .story-author { font-family: 'Inter', sans-serif; font-size: 0.9rem; font-style: normal; color: var(--text-light); margin-top: 16px; display: block; }
 
-        .about-author { background: var(--white); position: relative; overflow: hidden; }
-        .author-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+        .about-author { background: var(--white); }
+        .author-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: center; }
         .author-image-wrapper { position: relative; }
         .author-image { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
         .author-badge { position: absolute; bottom: -20px; right: -20px; background: var(--white); padding: 16px 24px; border-radius: var(--radius); box-shadow: var(--shadow-lg); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; color: var(--gold-dark); }
@@ -139,19 +154,19 @@
         .author-text { color: var(--text-soft); line-height: 1.8; margin-bottom: 16px; }
         .author-note { padding: 24px; background: var(--bg-light); border-left: 3px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; font-style: italic; color: var(--text); margin-top: 32px; line-height: 1.8; }
 
-        .why-different { background: var(--bg); position: relative; overflow: hidden; }
-        .why-different-header { text-align: center; max-width: 700px; margin: 0 auto 60px; position: relative; z-index: 1; }
+        .why-different { background: var(--bg); }
+        .why-different-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
         .why-different-header h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 16px; font-style: italic; }
         .why-different-header p { color: var(--text-soft); font-size: 1.1rem; }
-        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; position: relative; z-index: 1; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
         .feature-card { background: var(--white); border-radius: var(--radius-lg); padding: 40px 32px; transition: all 0.3s; border: 1px solid rgba(184, 147, 61, 0.1); }
         .feature-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
         .feature-title { font-size: 1.5rem; margin-bottom: 8px; font-style: italic; }
         .feature-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--gold-dark); margin-bottom: 16px; }
         .feature-text { font-size: 0.95rem; color: var(--text-soft); line-height: 1.7; margin: 0; }
 
-        .who-is-for { background: var(--white); position: relative; overflow: hidden; }
-        .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; position: relative; z-index: 1; }
+        .who-is-for { background: var(--white); }
+        .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
         .who-list { list-style: none; }
         .who-list li { padding: 16px 16px 16px 48px; position: relative; font-size: 1rem; color: var(--text); line-height: 1.6; background: var(--bg-light); margin-bottom: 12px; border-radius: var(--radius); border: 1px solid rgba(184, 147, 61, 0.1); }
         .who-list li::before { content: '✓'; position: absolute; left: 16px; top: 16px; width: 24px; height: 24px; background: var(--gold); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; }
@@ -161,11 +176,11 @@
         .who-not-for li { padding: 12px 0 12px 32px; position: relative; color: var(--text-soft); }
         .who-not-for li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-weight: 600; }
 
-        .modules-detailed { background: var(--bg); position: relative; overflow: hidden; }
-        .modules-detailed-header { text-align: center; max-width: 700px; margin: 0 auto 60px; position: relative; z-index: 1; }
+        .modules-detailed { background: var(--bg); }
+        .modules-detailed-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
         .modules-detailed-header h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 16px; font-style: italic; }
         .modules-detailed-header p { color: var(--text-soft); font-size: 1.1rem; }
-        .modules-list { max-width: 900px; margin: 0 auto; display: grid; gap: 16px; position: relative; z-index: 1; }
+        .modules-list { max-width: 900px; margin: 0 auto; display: grid; gap: 16px; }
         .module-item { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s; border: 1px solid rgba(184, 147, 61, 0.1); }
         .module-item:hover { box-shadow: var(--shadow-lg); }
         .module-header { padding: 24px 32px; cursor: pointer; display: flex; align-items: flex-start; gap: 24px; transition: background 0.2s; }
@@ -183,19 +198,19 @@
         .module-practices li { padding: 8px 0 8px 24px; position: relative; color: var(--text-soft); font-size: 0.95rem; line-height: 1.6; }
         .module-practices li::before { content: '+'; position: absolute; left: 0; color: var(--gold); font-weight: 600; }
 
-        .how-it-works { background: var(--white); position: relative; overflow: hidden; }
-        .how-it-works-header { text-align: center; max-width: 700px; margin: 0 auto 60px; position: relative; z-index: 1; }
+        .how-it-works { background: var(--white); }
+        .how-it-works-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
         .how-it-works-header h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 16px; font-style: italic; }
         .how-it-works-header p { color: var(--text-soft); font-size: 1.1rem; }
-        .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; position: relative; z-index: 1; }
+        .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
         .how-card { text-align: center; padding: 40px 32px; background: var(--bg-light); border-radius: var(--radius-lg); transition: all 0.3s; border: 1px solid rgba(184, 147, 61, 0.1); }
         .how-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
         .how-title { font-size: 1.5rem; margin-bottom: 8px; font-style: italic; }
         .how-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--gold-dark); margin-bottom: 16px; }
         .how-text { font-size: 0.95rem; color: var(--text-soft); line-height: 1.7; margin: 0; }
 
-        .telegram-preview { background: var(--bg); position: relative; overflow: hidden; }
-        .telegram-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+        .telegram-preview { background: var(--bg); }
+        .telegram-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .telegram-content h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 16px; font-style: italic; }
         .telegram-content > p { color: var(--text-soft); font-size: 1.05rem; margin-bottom: 32px; }
         .telegram-mockup { background: var(--white); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-lg); border: 1px solid rgba(184, 147, 61, 0.15); }
@@ -216,26 +231,26 @@
         .telegram-daily li::before { content: '•'; position: absolute; left: 0; color: var(--gold); }
         .telegram-note { margin-top: 24px; font-size: 0.9rem; color: var(--text-soft); font-style: italic; }
 
-        .what-you-get { background: var(--white); position: relative; overflow: hidden; }
-        .what-you-get-header { text-align: center; max-width: 700px; margin: 0 auto 60px; position: relative; z-index: 1; }
+        .what-you-get { background: var(--white); }
+        .what-you-get-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
         .what-you-get-header h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 16px; font-style: italic; }
         .what-you-get-header p { color: var(--text-soft); font-size: 1.1rem; }
-        .get-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-bottom: 60px; position: relative; z-index: 1; }
+        .get-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-bottom: 60px; }
         .get-card { text-align: center; padding: 32px 24px; background: var(--bg-light); border-radius: var(--radius-lg); transition: all 0.3s; border: 1px solid rgba(184, 147, 61, 0.1); }
         .get-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
         .get-title { font-size: 1.25rem; margin-bottom: 12px; font-style: italic; }
         .get-text { font-size: 0.9rem; color: var(--text-soft); line-height: 1.6; margin: 0; }
-        .author-quote-final { max-width: 800px; margin: 0 auto; text-align: center; padding: 48px; background: var(--bg-light); border-radius: var(--radius-lg); position: relative; z-index: 1; border: 1px solid rgba(184, 147, 61, 0.15); }
+        .author-quote-final { max-width: 800px; margin: 0 auto; text-align: center; padding: 48px; background: var(--bg-light); border-radius: var(--radius-lg); border: 1px solid rgba(184, 147, 61, 0.15); }
         .author-quote-final blockquote { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: var(--text); line-height: 1.5; margin-bottom: 16px; }
         .author-quote-final cite { font-family: 'Inter', sans-serif; font-size: 0.9rem; font-style: normal; color: var(--text-light); }
-        .what-you-get-note { max-width: 700px; margin: 40px auto 0; text-align: center; position: relative; z-index: 1; }
+        .what-you-get-note { max-width: 700px; margin: 40px auto 0; text-align: center; }
         .what-you-get-note p { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--text-soft); line-height: 1.6; }
 
-        .pricing { background: var(--white); position: relative; overflow: hidden; }
-        .pricing-header { text-align: center; max-width: 700px; margin: 0 auto 60px; position: relative; z-index: 1; }
+        .pricing { background: var(--white); }
+        .pricing-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
         .pricing-header h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 16px; font-style: italic; }
         .pricing-header p { color: var(--text-soft); font-size: 1.1rem; }
-        .pricing-card { max-width: 900px; margin: 0 auto; background: var(--bg-light); border-radius: var(--radius-lg); padding: 48px; box-shadow: var(--shadow); position: relative; z-index: 1; border: 1px solid rgba(184, 147, 61, 0.15); }
+        .pricing-card { max-width: 900px; margin: 0 auto; background: var(--bg-light); border-radius: var(--radius-lg); padding: 48px; box-shadow: var(--shadow); border: 1px solid rgba(184, 147, 61, 0.15); }
         .pricing-card-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 32px; flex-wrap: wrap; gap: 24px; }
         .pricing-card-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-style: italic; }
         .pricing-card-price { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-style: italic; color: var(--text); }
@@ -244,10 +259,10 @@
         .pricing-features li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 600; }
         .pricing-features .btn { width: 100%; justify-content: center; padding: 16px; font-size: 1rem; }
 
-        .faq { background: var(--bg); position: relative; overflow: hidden; }
-        .faq-header { text-align: center; margin-bottom: 60px; position: relative; z-index: 1; }
+        .faq { background: var(--bg); }
+        .faq-header { text-align: center; margin-bottom: 60px; }
         .faq-header h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 16px; font-style: italic; }
-        .faq-list { max-width: 800px; margin: 0 auto; display: grid; gap: 12px; position: relative; z-index: 1; }
+        .faq-list { max-width: 800px; margin: 0 auto; display: grid; gap: 12px; }
         .faq-item { background: var(--white); border-radius: var(--radius); overflow: hidden; transition: all 0.3s; border: 1px solid rgba(184, 147, 61, 0.1); }
         .faq-item:hover { box-shadow: var(--shadow); }
         .faq-question { padding: 20px 24px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-weight: 500; transition: background 0.2s; }
@@ -268,7 +283,7 @@
         .final-cta .btn:hover { background: var(--gold-light); transform: translateY(-3px); }
         .final-note { margin-top: 24px; font-size: 0.85rem; color: var(--gold-light); opacity: 0.8; }
 
-        .footer { background: var(--bg); padding: 50px 0 30px; border-top: 1px solid rgba(59, 42, 32, 0.1); position: relative; z-index: 1; }
+        .footer { background: var(--bg); padding: 50px 0 30px; border-top: 1px solid rgba(59, 42, 32, 0.1); }
         .footer-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 30px; border-bottom: 1px solid rgba(59, 42, 32, 0.1); flex-wrap: wrap; gap: 24px; }
         .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; }
         .footer-copy { font-size: 0.82rem; color: var(--text-light); font-style: italic; }
@@ -296,6 +311,9 @@
             .btn { width: 100%; justify-content: center; }
             .hero-buttons { flex-direction: column; }
             .pricing-card-header { flex-direction: column; align-items: flex-start; }
+            /* На мобильных фоны показываются с более сильным затемнением для читаемости */
+            .hero-bg::after { background: linear-gradient(90deg, rgba(247, 238, 225, 0.98) 0%, rgba(247, 238, 225, 0.95) 40%, rgba(247, 238, 225, 0.85) 70%, rgba(247, 238, 225, 0.6) 100%); }
+            .practices-bg::after { background: linear-gradient(90deg, rgba(247, 238, 225, 0.98) 0%, rgba(247, 238, 225, 0.92) 50%, rgba(247, 238, 225, 0.75) 100%); }
         }
         section[id] { scroll-margin-top: 100px; }
     </style>
@@ -315,16 +333,14 @@
     <button class="mobile-toggle" aria-label="Меню"><span></span><span></span><span></span></button>
 </nav>
 
+<!-- HERO С ФОТОМ НА ЗАКАТЕ -->
 <section class="hero" id="top">
     <div class="hero-bg"></div>
     <div class="hero-content">
         <span class="hero-label">Путеводитель</span>
         <h1>Я выбираю себя</h1>
         <p class="hero-quote">А когда вы в последний раз делали что-то для себя — не потому что надо, а потому что вам этого хотелось?</p>
-        <p class="hero-text">Не для работы. Не для семьи. Не чтобы соответствовать чьим-то ожиданиям.<br><br>
-        А просто потому, что вам важно, как вы себя чувствуете, как выглядит ваше тело, в каком состоянии вы просыпаетесь и с каким настроением проживаете свой день.<br><br>
-        Иногда мы настолько привыкаем заботиться обо всём вокруг, что перестаём замечать собственные потребности.<br><br>
-        «Я выбираю себя» — Путеводитель, который помогает постепенно вернуть внимание к себе и сделать заботу о себе частью обычной жизни.</p>
+        <p class="hero-text">Не для работы. Не для семьи. Не чтобы соответствовать чьим-то ожиданиям.<br><br>А просто потому, что вам важно, как вы себя чувствуете, как выглядит ваше тело, в каком состоянии вы просыпаетесь и с каким настроением проживаете свой день.<br><br>Иногда мы настолько привыкаем заботиться обо всём вокруг, что перестаём замечать собственные потребности.<br><br>«Я выбираю себя» — Путеводитель, который помогает постепенно вернуть внимание к себе и сделать заботу о себе частью обычной жизни.</p>
         <div class="hero-buttons">
             <a href="https://t.me/choicemeofficialbot?start=landing" class="btn btn-gold tg-link">Начать путь <span class="btn-arrow">→</span></a>
             <a href="#program" class="btn btn-outline">Что внутри</a>
@@ -348,40 +364,38 @@
 </div>
 
 <section class="znakomo">
-    <div class="bg-texture" style="background-image: url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1200&q=80'); background-position: center right;"></div>
     <div class="container">
-        <div class="znakomo-header reveal">
+        <div class="znakomo-header">
             <h2>Знакомо?</h2>
             <p>Иногда дело не в том, что вам не хватает силы воли.<br>Вы просто слишком долго жили в режиме, где всё остальное оказывалось важнее вас.</p>
         </div>
         <div class="znakomo-grid">
-            <div class="znakomo-card reveal">
+            <div class="znakomo-card">
                 <div class="znakomo-num">01</div>
                 <p>Вы знаете, что вам хочется больше заботы о себе — но снова находите более срочные дела.</p>
             </div>
-            <div class="znakomo-card reveal">
+            <div class="znakomo-card">
                 <div class="znakomo-num">02</div>
                 <p>Пробуете начать: питание, спорт, уход, режим. А потом жизнь возвращается в привычный ритм.</p>
             </div>
-            <div class="znakomo-card reveal">
+            <div class="znakomo-card">
                 <div class="znakomo-num">03</div>
                 <p>Сложно понять, с чего начать, когда советов слишком много и кажется, что менять нужно сразу всё.</p>
             </div>
-            <div class="znakomo-card reveal">
+            <div class="znakomo-card">
                 <div class="znakomo-num">04</div>
                 <p>И забота о себе постепенно превращается в ещё один проект, который вы откладываете до «подходящего момента».</p>
             </div>
         </div>
-        <div class="znakomo-quote reveal">
+        <div class="znakomo-quote">
             <p>Возможно, вам не нужен новый список дел.<br>Вам нужно снова увидеть себя среди всего остального.</p>
         </div>
     </div>
 </section>
 
 <section class="author-story">
-    <div class="bg-texture" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80'); filter: blur(2px);"></div>
     <div class="container">
-        <div class="story-content reveal">
+        <div class="story-content">
             <span class="section-label">Почему я это создала</span>
             <h2>Не потому, что однажды нашла идеальную формулу.</h2>
             <p>Когда-то я сама искала ответ на вопрос, как снова почувствовать себя хорошо — не только внешне, но и внутри.</p>
@@ -396,21 +410,21 @@
     </div>
 </section>
 
+<!-- ОБ АВТОРЕ С ПОРТРЕТОМ -->
 <section class="about-author">
     <div class="container">
         <div class="author-grid">
-            <div class="author-image-wrapper reveal">
-                <img src="https://i.ibb.co/6cJTq7b8/author.jpg" alt="Леночка Кузовлёва" class="author-image">
+            <div class="author-image-wrapper">
+                <img src="author.jpg" alt="Леночка Кузовлёва" class="author-image">
                 <div class="author-badge">Леночка Кузовлёва</div>
             </div>
-            <div class="author-content reveal">
+            <div class="author-content">
                 <span class="section-label">Об авторе</span>
                 <h3>Моя история трансформации началась в 20 лет</h3>
                 <p class="author-text">— с момента, когда я поняла, что больше не чувствую себя так, как хочу.</p>
                 <p class="author-text">За эти годы я много изучала и пробовала: получила образование в сфере фитнеса и управления фитнес-студиями, проходила обучение в коучинге, моделинге и актёрском мастерстве. Спорт и активный образ жизни помогли мне лучше почувствовать своё тело, состояние и то, как важно поддерживать себя не только внешне, но и внутренне.</p>
                 <div class="author-note">
-                    Я не обещаю повторить мой результат. Мне важнее дать вам возможность найти свой.<br><br>
-                    Более личную историю моего пути я оставила внутри самого Путеводителя.
+                    Я не обещаю повторить мой результат. Мне важнее дать вам возможность найти свой.<br><br>Более личную историю моего пути я оставила внутри самого Путеводителя.
                 </div>
             </div>
         </div>
@@ -418,25 +432,24 @@
 </section>
 
 <section class="why-different">
-    <div class="bg-texture" style="background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80'); opacity: 0.04;"></div>
     <div class="container">
-        <div class="why-different-header reveal">
+        <div class="why-different-header">
             <span class="section-label">Почему это по-другому</span>
             <h2>Не начинать всё заново. А найти то, что поддержит вас сейчас.</h2>
             <p>Вам не нужно делать всё сразу. Можно начать с одного раздела, попробовать то, что откликается, и вернуться к остальному позже.</p>
         </div>
         <div class="features-grid">
-            <div class="feature-card reveal">
+            <div class="feature-card">
                 <h3 class="feature-title">Система, не мотивация</h3>
                 <p class="feature-subtitle">Маленькие понятные шаги</p>
                 <p class="feature-text">Не нужно «заставлять себя». Практики встроены в обычный день, в своём темпе — без перестройки всей жизни.</p>
             </div>
-            <div class="feature-card reveal">
+            <div class="feature-card">
                 <h3 class="feature-title">Тело и психология</h3>
                 <p class="feature-subtitle">Понимать себя, а не только себя менять</p>
                 <p class="feature-text">«Колесо самоценности», протокол «СТОП» и готовые скрипты границ помогают замечать свои потребности, причины привычных реакций и способы действовать по-другому.</p>
             </div>
-            <div class="feature-card reveal">
+            <div class="feature-card">
                 <h3 class="feature-title">Без давления</h3>
                 <p class="feature-subtitle">Реалистично, а не идеально</p>
                 <p class="feature-text">Тренировки дома или в зале — на ваш выбор. Питание — баланс, а не голод. Личный дневник-трекер помогает видеть прогресс и радоваться каждому маленькому шагу вперёд.</p>
@@ -448,7 +461,7 @@
 <section class="who-is-for">
     <div class="container">
         <div class="who-grid">
-            <div class="reveal">
+            <div>
                 <span class="section-label">Кому подходит</span>
                 <h2 style="font-size: 2rem; margin-bottom: 24px; font-style: italic;">Вам поможет этот Путеводитель, если:</h2>
                 <ul class="who-list">
@@ -459,7 +472,7 @@
                     <li>Готовы разбираться не только с телом, но и с тем, что внутри.</li>
                 </ul>
             </div>
-            <div class="who-not-for reveal">
+            <div class="who-not-for">
                 <h3>Скорее всего, не ваш формат, если:</h3>
                 <ul>
                     <li>Ищете экстремальный результат за 2–3 дня.</li>
@@ -473,7 +486,7 @@
 
 <section class="modules-detailed" id="program">
     <div class="container">
-        <div class="modules-detailed-header reveal">
+        <div class="modules-detailed-header">
             <span class="section-label">Что внутри</span>
             <h2>Путь, который можно проходить по-своему</h2>
             <p>Семь модулей ведут от внутреннего состояния к телу, питанию, движению и дальнейшему продолжению. Но вам не обязательно открывать их все сразу — начните с того места, где вы сейчас.</p>
@@ -618,23 +631,23 @@
 
 <section class="how-it-works" id="format">
     <div class="container">
-        <div class="how-it-works-header reveal">
+        <div class="how-it-works-header">
             <span class="section-label">Как это устроено</span>
             <h2>Не ещё один марафон, который нужно успеть</h2>
             <p>Путеводитель остаётся с вами. Можно читать, пробовать, пропускать и возвращаться — без отчётов и гонки за идеальным прохождением.</p>
         </div>
         <div class="how-grid">
-            <div class="how-card reveal">
+            <div class="how-card">
                 <h3 class="how-title">Telegram</h3>
                 <p class="how-subtitle">Весь путь — в одном месте</p>
                 <p class="how-text">Все семь модулей находятся в закрытом Telegram-канале. Рядом — отдельный чат для общения. Вы проходите материалы в своём темпе, а доступ сохраняется навсегда.</p>
             </div>
-            <div class="how-card reveal">
+            <div class="how-card">
                 <h3 class="how-title">Практика</h3>
                 <p class="how-subtitle">Не только теория</p>
                 <p class="how-text">Тесты, дневники, протоколы, скрипты, дыхание, медитация, тренировки, меню, рецепты и готовые рекомендации — материалы можно сразу применять в обычной жизни.</p>
             </div>
-            <div class="how-card reveal">
+            <div class="how-card">
                 <h3 class="how-title">Темп</h3>
                 <p class="how-subtitle">Без гонки и «идеального прохождения»</p>
                 <p class="how-text">Не нужно успеть всё за определённый срок. Можно пройти путь целиком или возвращаться к отдельным модулям тогда, когда они становятся актуальны.</p>
@@ -643,17 +656,19 @@
     </div>
 </section>
 
-<section class="telegram-preview" id="cabinet">
+<!-- СЕКЦИЯ С ФОТО У ОКНА -->
+<section class="practices-section" id="cabinet">
+    <div class="practices-bg"></div>
     <div class="container">
         <div class="telegram-grid">
-            <div class="telegram-content reveal">
+            <div class="telegram-content">
                 <span class="section-label">Что внутри</span>
                 <h2>Внутри всё просто: выбираете раздел и двигаетесь в своём темпе</h2>
                 <p>Это не гонка и не обязательная последовательность. Навигация помогает видеть систему целиком и отмечать свои маленькие шаги.</p>
                 <a href="https://t.me/choicemeofficialbot?start=landing" class="btn btn-gold tg-link">Начать путь <span class="btn-arrow">→</span></a>
                 <p class="telegram-note">Все семь модулей открываются сразу после оплаты. Вы можете начать с первого или открыть тот, который нужен вам сейчас.</p>
             </div>
-            <div class="telegram-mockup reveal">
+            <div class="telegram-mockup">
                 <div class="telegram-header">
                     <div class="telegram-header-icon">✈</div>
                     <div class="telegram-header-text">Telegram · Я выбираю себя<small>0/7 разделов пройдено</small></div>
@@ -662,11 +677,11 @@
                 <ul class="telegram-modules">
                     <li class="done">✓ 01. Вернуть себя себе Пройдено</li>
                     <li class="done">✓ 02. Начать день с себя Пройдено</li>
-                    <li class="current">03 03. Тренировки и движение Сейчас</li>
-                    <li class="soon">04 04. Массаж и уход за телом Скоро</li>
-                    <li class="soon">05 05. Кожа, ногти, волосы Скоро</li>
-                    <li class="soon">06 06. Вернуть тело в движение и рецепты Скоро</li>
-                    <li class="soon">07 07. Вдохновение для продолжения Скоро</li>
+                    <li class="current">03. Тренировки и движение Сейчас</li>
+                    <li class="soon">04. Массаж и уход за телом Скоро</li>
+                    <li class="soon">05. Кожа, ногти, волосы Скоро</li>
+                    <li class="soon">06. Вернуть тело в движение и рецепты Скоро</li>
+                    <li class="soon">07. Вдохновение для продолжения Скоро</li>
                 </ul>
                 <div class="telegram-daily">
                     <h4>Ваши ежедневные отметки</h4>
@@ -684,35 +699,34 @@
 </section>
 
 <section class="what-you-get">
-    <div class="bg-texture" style="background-image: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1200&q=80'); opacity: 0.04;"></div>
     <div class="container">
-        <div class="what-you-get-header reveal">
+        <div class="what-you-get-header">
             <span class="section-label">Что останется с вами</span>
             <h2>Не обещания, а то, на что можно опираться</h2>
         </div>
         <div class="get-grid">
-            <div class="get-card reveal">
+            <div class="get-card">
                 <h3 class="get-title">Внутреннее состояние</h3>
                 <p class="get-text">Лучше понимать, почему вы откладываете себя, замечать свои потребности и учиться ставить границы.</p>
             </div>
-            <div class="get-card reveal">
+            <div class="get-card">
                 <h3 class="get-title">Ежедневные практики</h3>
                 <p class="get-text">Собрать собственный утренний ритуал и несколько коротких практик, к которым легко возвращаться.</p>
             </div>
-            <div class="get-card reveal">
+            <div class="get-card">
                 <h3 class="get-title">Тело и питание</h3>
                 <p class="get-text">Двигаться, ухаживать за собой и организовывать питание без идеи, что всё нужно делать идеально.</p>
             </div>
-            <div class="get-card reveal">
+            <div class="get-card">
                 <h3 class="get-title">Система</h3>
                 <p class="get-text">Иметь под рукой материалы, к которым можно возвращаться тогда, когда вам нужна поддержка.</p>
             </div>
         </div>
-        <div class="author-quote-final reveal">
+        <div class="author-quote-final">
             <blockquote>«Я собрала в этот путеводитель всё, что реально сработало для меня за годы пути — без лишнего и без давления.»</blockquote>
             <cite>— Леночка Кузовлёва, автор</cite>
         </div>
-        <div class="what-you-get-note reveal">
+        <div class="what-you-get-note">
             <p>Не обязательно менять всё. Иногда достаточно заметить одну свою потребность и наконец дать ей место.<br>К разным разделам можно возвращаться в разные периоды жизни — потому что вам не всегда нужно одно и то же.</p>
         </div>
     </div>
@@ -720,12 +734,12 @@
 
 <section class="pricing" id="pricing">
     <div class="container">
-        <div class="pricing-header reveal">
+        <div class="pricing-header">
             <span class="section-label">Доступ</span>
             <h2>Всё необходимое — в одном Путеводителе</h2>
             <p>Это не марафон с дедлайнами и не курс с расписанием. Это путеводитель, к которому можно возвращаться в своём темпе. Внутри — 7 модулей, дневник на 30 дней и практические материалы для повседневной заботы о себе.<br><br>Не нужно успевать пройти всё сразу. Доступ остаётся с вами, чтобы возвращаться тогда, когда это действительно нужно.</p>
         </div>
-        <div class="pricing-card reveal">
+        <div class="pricing-card">
             <div class="pricing-card-header">
                 <div>
                     <div class="pricing-card-title">Путеводитель</div>
@@ -747,7 +761,7 @@
 
 <section class="faq" id="faq">
     <div class="container">
-        <div class="faq-header reveal">
+        <div class="faq-header">
             <span class="section-label">Вопросы</span>
             <h2>Отвечаем заранее</h2>
         </div>
@@ -819,52 +833,6 @@
 </footer>
 
 <script>
-// Анимации при прокрутке
-const observer = new IntersectionObserver(entries => { 
-    entries.forEach(entry => { 
-        if (entry.isIntersecting) entry.target.classList.add('visible'); 
-    }); 
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Тень навигации при скролле
-window.addEventListener('scroll', () => { 
-    const nav = document.querySelector('.nav'); 
-    nav.style.boxShadow = window.scrollY > 50 ? '0 4px 24px rgba(59,42,32,0.1)' : '0 2px 8px rgba(59,42,32,0.06)'; 
-});
-
-// Плавная прокрутка к якорям
-document.querySelectorAll('a[href^="#"]').forEach(anchor => { 
-    anchor.addEventListener('click', function(e) { 
-        const href = this.getAttribute('href'); 
-        if (href !== '#') { 
-            e.preventDefault(); 
-            const target = document.querySelector(href); 
-            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
-        } 
-    }); 
-});
-
-// Мобильное меню
-const mobileToggle = document.querySelector('.mobile-toggle'), navMenu = document.querySelector('.nav-menu');
-mobileToggle.addEventListener('click', () => { 
-    if (navMenu.style.display === 'flex') { 
-        navMenu.style.display = 'none'; 
-    } else { 
-        navMenu.style.display = 'flex'; 
-        navMenu.style.flexDirection = 'column'; 
-        navMenu.style.position = 'absolute'; 
-        navMenu.style.top = '100%'; 
-        navMenu.style.left = '0'; 
-        navMenu.style.right = '0'; 
-        navMenu.style.background = 'white'; 
-        navMenu.style.padding = '20px'; 
-        navMenu.style.borderRadius = '16px'; 
-        navMenu.style.marginTop = '8px'; 
-        navMenu.style.boxShadow = '0 4px 24px rgba(59,42,32,0.1)'; 
-    } 
-});
-
 // Раскрытие модулей
 function toggleModule(header) {
     const item = header.parentElement;
@@ -876,4 +844,43 @@ function toggleModule(header) {
 // Раскрытие FAQ
 function toggleFaq(question) {
     const item = question.parentElement;
-  
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('active'));
+    if (!isActive) item.classList.add('active');
+}
+
+// Мобильное меню
+const mobileToggle = document.querySelector('.mobile-toggle');
+const navMenu = document.querySelector('.nav-menu');
+mobileToggle.addEventListener('click', () => {
+    if (navMenu.style.display === 'flex') {
+        navMenu.style.display = 'none';
+    } else {
+        navMenu.style.display = 'flex';
+        navMenu.style.flexDirection = 'column';
+        navMenu.style.position = 'absolute';
+        navMenu.style.top = '100%';
+        navMenu.style.left = '0';
+        navMenu.style.right = '0';
+        navMenu.style.background = 'white';
+        navMenu.style.padding = '20px';
+        navMenu.style.borderRadius = '16px';
+        navMenu.style.marginTop = '8px';
+        navMenu.style.boxShadow = '0 4px 24px rgba(59,42,32,0.1)';
+    }
+});
+
+// Умные ссылки на Telegram (работают и на ПК, и на телефоне)
+document.querySelectorAll('.tg-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'tg://resolve?domain=choicemeofficialbot&start=landing';
+        setTimeout(() => {
+            window.open('https://t.me/choicemeofficialbot?start=landing', '_blank');
+        }, 1500);
+    });
+});
+</script>
+
+</body>
+</html>
