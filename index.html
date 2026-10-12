@@ -27,8 +27,8 @@
     <meta name="twitter:description" content="7 модулей заботы о себе. Практики без давления. Доступ навсегда.">
     <meta name="twitter:image" content="https://i.ibb.co/6cJTq7b8/author.jpg">
     
-    <!-- Favicon (встроенный SVG — не требует отдельного файла) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%3C/text%3E%3C/svg%3E">
+    <!-- Favicon (встроенный SVG) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E">
     <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E">
     
     <!-- Schema.org разметка для поисковиков -->
@@ -318,6 +318,8 @@
             .features-grid, .how-grid { grid-template-columns: 1fr; }
             .get-grid { grid-template-columns: repeat(2, 1fr); }
         }
+        
+        /* АДАПТИРОВАННАЯ МОБИЛЬНАЯ ВЕРСИЯ С ВИДИМЫМИ ФОНАМИ */
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
             section { padding: 60px 0; }
@@ -332,12 +334,100 @@
             .btn { width: 100%; justify-content: center; }
             .hero-buttons { flex-direction: column; }
             .pricing-card-header { flex-direction: column; align-items: flex-start; }
-            .hero-bg::after { background: linear-gradient(90deg, rgba(247, 238, 225, 0.98) 0%, rgba(247, 238, 225, 0.95) 40%, rgba(247, 238, 225, 0.85) 70%, rgba(247, 238, 225, 0.6) 100%); }
-            .mountains-bg::after { background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 50%, rgba(255, 255, 255, 0.8) 100%); }
-            .meditation-bg::after { background: linear-gradient(90deg, rgba(247, 238, 225, 0.98) 0%, rgba(247, 238, 225, 0.92) 50%, rgba(247, 238, 225, 0.8) 100%); }
-            .practices-bg::after { background: linear-gradient(90deg, rgba(247, 238, 225, 0.98) 0%, rgba(247, 238, 225, 0.92) 50%, rgba(247, 238, 225, 0.75) 100%); }
-            .santorini-bg::after { background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 50%, rgba(255, 255, 255, 0.8) 100%); }
-            .final-cta-bg::after { background: linear-gradient(135deg, rgba(59, 42, 32, 0.85) 0%, rgba(92, 58, 34, 0.75) 100%); }
+            
+            /* Hero - фото женщины на закате */
+            .hero-bg {
+                background-position: center right;
+            }
+            .hero-bg::after {
+                background: linear-gradient(180deg, 
+                    rgba(247, 238, 225, 0.95) 0%, 
+                    rgba(247, 238, 225, 0.85) 30%, 
+                    rgba(247, 238, 225, 0.6) 60%, 
+                    rgba(247, 238, 225, 0.3) 100%
+                );
+            }
+            
+            /* Горы - панорама заката */
+            .mountains-bg {
+                background-position: center bottom;
+            }
+            .mountains-bg::after {
+                background: linear-gradient(180deg, 
+                    rgba(255, 255, 255, 0.9) 0%, 
+                    rgba(255, 255, 255, 0.75) 40%, 
+                    rgba(255, 255, 255, 0.5) 100%
+                );
+            }
+            
+            /* Медитация - женщина у моря */
+            .meditation-bg {
+                background-position: center center;
+            }
+            .meditation-bg::after {
+                background: linear-gradient(180deg, 
+                    rgba(247, 238, 225, 0.9) 0%, 
+                    rgba(247, 238, 225, 0.7) 50%, 
+                    rgba(247, 238, 225, 0.4) 100%
+                );
+            }
+            
+            /* Практики - женщина у окна */
+            .practices-bg {
+                background-position: center center;
+            }
+            .practices-bg::after {
+                background: linear-gradient(180deg, 
+                    rgba(247, 238, 225, 0.92) 0%, 
+                    rgba(247, 238, 225, 0.75) 50%, 
+                    rgba(247, 238, 225, 0.5) 100%
+                );
+            }
+            
+            /* Санторини - бассейн и цветы */
+            .santorini-bg {
+                background-position: center top;
+            }
+            .santorini-bg::after {
+                background: linear-gradient(180deg, 
+                    rgba(255, 255, 255, 0.88) 0%, 
+                    rgba(255, 255, 255, 0.7) 50%, 
+                    rgba(255, 255, 255, 0.45) 100%
+                );
+            }
+            
+            /* Гамак - девушка читает */
+            .final-cta-bg {
+                background-position: center center;
+            }
+            .final-cta-bg::after {
+                background: linear-gradient(135deg, 
+                    rgba(59, 42, 32, 0.65) 0%, 
+                    rgba(92, 58, 34, 0.55) 50%, 
+                    rgba(184, 147, 61, 0.4) 100%
+                );
+            }
+            
+            /* Улучшаем читаемость текста на мобильных */
+            .hero-content {
+                text-shadow: 0 1px 4px rgba(247, 238, 225, 0.8);
+            }
+            
+            .hero-quote {
+                background: rgba(255, 255, 255, 0.85);
+                backdrop-filter: blur(12px);
+            }
+            
+            .znakomo-header,
+            .story-content,
+            .why-different-header,
+            .modules-detailed-header,
+            .how-it-works-header,
+            .what-you-get-header,
+            .pricing-header,
+            .faq-header {
+                text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+            }
         }
         section[id] { scroll-margin-top: 100px; }
     </style>
@@ -378,7 +468,7 @@
         <div class="visual-strip-inner">
             <div class="visual-strip-item">7 модулей</div>
             <div class="visual-strip-divider"></div>
-            <div class="visual-strip-item">∞ доступ</div>
+            <div class="visual-strip-item"> доступ</div>
             <div class="visual-strip-divider"></div>
             <div class="visual-strip-item">30 дней дневника</div>
             <div class="visual-strip-divider"></div>
@@ -697,7 +787,7 @@
                     <div class="telegram-header-icon">✈</div>
                     <div class="telegram-header-text">Telegram · Я выбираю себя<small>0/7 разделов пройдено</small></div>
                 </div>
-                <div class="telegram-progress"> Начните с первого шага</div>
+                <div class="telegram-progress">✦ Начните с первого шага</div>
                 <ul class="telegram-modules">
                     <li class="done">✓ 01. Вернуть себя себе Пройдено</li>
                     <li class="done">✓ 02. Начать день с себя Пройдено</li>
@@ -864,7 +954,7 @@
             </nav>
             <div class="footer-social">
                 <a href="https://t.me/choicemeofficialbot?start=landing" target="_blank" rel="noopener" aria-label="Telegram-бот">✈</a>
-                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="Instagram"></a>
             </div>
         </div>
         <div class="footer-bottom">
