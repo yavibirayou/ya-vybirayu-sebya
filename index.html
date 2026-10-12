@@ -12,7 +12,7 @@
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://yavibirayou.github.io/ya-vybirayu-sebya/">
     
-    <!-- Open Graph (превью в соцсетях и мессенджерах) -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Я выбираю себя — путеводитель для женщины, которая готова выбрать себя">
     <meta property="og:description" content="7 модулей по заботе о теле, эмоциях и внутреннем состоянии. Практики без давления. Доступ навсегда. 3 990 ₽.">
@@ -27,25 +27,19 @@
     <meta name="twitter:description" content="7 модулей заботы о себе. Практики без давления. Доступ навсегда.">
     <meta name="twitter:image" content="https://i.ibb.co/6cJTq7b8/author.jpg">
     
-    <!-- Favicon (встроенный SVG) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E">
     <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E">
     
-    <!-- Schema.org разметка для поисковиков -->
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Product",
         "name": "Я выбираю себя — путеводитель для женщины",
         "description": "Онлайн-путеводитель с 7 модулями по заботе о теле, эмоциях, питании и внутреннем состоянии. Практики без давления.",
-        "brand": {
-            "@type": "Brand",
-            "name": "Я выбираю себя"
-        },
-        "author": {
-            "@type": "Person",
-            "name": "Леночка Кузовлёва"
-        },
+        "brand": { "@type": "Brand", "name": "Я выбираю себя" },
+        "author": { "@type": "Person", "name": "Леночка Кузовлёва" },
         "offers": {
             "@type": "Offer",
             "price": "3990",
@@ -56,7 +50,6 @@
     }
     </script>
     
-    <!-- Подключение шрифтов -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -319,7 +312,7 @@
             .get-grid { grid-template-columns: repeat(2, 1fr); }
         }
         
-        /* АДАПТИРОВАННАЯ МОБИЛЬНАЯ ВЕРСИЯ С ВИДИМЫМИ ФОНАМИ */
+        /* АДАПТИРОВАННАЯ МОБИЛЬНАЯ ВЕРСИЯ */
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
             section { padding: 60px 0; }
@@ -335,10 +328,8 @@
             .hero-buttons { flex-direction: column; }
             .pricing-card-header { flex-direction: column; align-items: flex-start; }
             
-            /* Hero - фото женщины на закате */
-            .hero-bg {
-                background-position: center right;
-            }
+            /* ФОНЫ */
+            .hero-bg { background-position: center right; }
             .hero-bg::after {
                 background: linear-gradient(180deg, 
                     rgba(247, 238, 225, 0.95) 0%, 
@@ -348,10 +339,7 @@
                 );
             }
             
-            /* Горы - панорама заката */
-            .mountains-bg {
-                background-position: center bottom;
-            }
+            .mountains-bg { background-position: center bottom; }
             .mountains-bg::after {
                 background: linear-gradient(180deg, 
                     rgba(255, 255, 255, 0.9) 0%, 
@@ -360,10 +348,7 @@
                 );
             }
             
-            /* Медитация - женщина у моря */
-            .meditation-bg {
-                background-position: center center;
-            }
+            .meditation-bg { background-position: center center; }
             .meditation-bg::after {
                 background: linear-gradient(180deg, 
                     rgba(247, 238, 225, 0.9) 0%, 
@@ -372,10 +357,7 @@
                 );
             }
             
-            /* Практики - женщина у окна */
-            .practices-bg {
-                background-position: center center;
-            }
+            .practices-bg { background-position: center center; }
             .practices-bg::after {
                 background: linear-gradient(180deg, 
                     rgba(247, 238, 225, 0.92) 0%, 
@@ -384,10 +366,7 @@
                 );
             }
             
-            /* Санторини - бассейн и цветы */
-            .santorini-bg {
-                background-position: center top;
-            }
+            .santorini-bg { background-position: center top; }
             .santorini-bg::after {
                 background: linear-gradient(180deg, 
                     rgba(255, 255, 255, 0.88) 0%, 
@@ -396,10 +375,7 @@
                 );
             }
             
-            /* Гамак - девушка читает */
-            .final-cta-bg {
-                background-position: center center;
-            }
+            .final-cta-bg { background-position: center center; }
             .final-cta-bg::after {
                 background: linear-gradient(135deg, 
                     rgba(59, 42, 32, 0.65) 0%, 
@@ -408,18 +384,24 @@
                 );
             }
             
-            /* Улучшаем читаемость текста на мобильных */
-            .hero-content {
-                text-shadow: 0 1px 4px rgba(247, 238, 225, 0.8);
+            /* ЧИТАЕМОСТЬ */
+            .hero-content { text-shadow: 0 1px 4px rgba(247, 238, 225, 0.8); }
+            .hero-quote { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
+            
+            /* ЯРКИЙ ТЕКСТ В ДВУХ УКАЗАННЫХ АБЗАЦАХ */
+            .hero-text {
+                color: var(--text);
+                font-weight: 500;
+                text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
             }
             
-            .hero-quote {
-                background: rgba(255, 255, 255, 0.85);
-                backdrop-filter: blur(12px);
+            .story-content p {
+                color: var(--text);
+                font-weight: 500;
+                text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
             }
             
             .znakomo-header,
-            .story-content,
             .why-different-header,
             .modules-detailed-header,
             .how-it-works-header,
@@ -468,7 +450,7 @@
         <div class="visual-strip-inner">
             <div class="visual-strip-item">7 модулей</div>
             <div class="visual-strip-divider"></div>
-            <div class="visual-strip-item"> доступ</div>
+            <div class="visual-strip-item">∞ доступ</div>
             <div class="visual-strip-divider"></div>
             <div class="visual-strip-item">30 дней дневника</div>
             <div class="visual-strip-divider"></div>
@@ -485,26 +467,12 @@
             <p>Иногда дело не в том, что вам не хватает силы воли.<br>Вы просто слишком долго жили в режиме, где всё остальное оказывалось важнее вас.</p>
         </div>
         <div class="znakomo-grid">
-            <div class="znakomo-card">
-                <div class="znakomo-num">01</div>
-                <p>Вы знаете, что вам хочется больше заботы о себе — но снова находите более срочные дела.</p>
-            </div>
-            <div class="znakomo-card">
-                <div class="znakomo-num">02</div>
-                <p>Пробуете начать: питание, спорт, уход, режим. А потом жизнь возвращается в привычный ритм.</p>
-            </div>
-            <div class="znakomo-card">
-                <div class="znakomo-num">03</div>
-                <p>Сложно понять, с чего начать, когда советов слишком много и кажется, что менять нужно сразу всё.</p>
-            </div>
-            <div class="znakomo-card">
-                <div class="znakomo-num">04</div>
-                <p>И забота о себе постепенно превращается в ещё один проект, который вы откладываете до «подходящего момента».</p>
-            </div>
+            <div class="znakomo-card"><div class="znakomo-num">01</div><p>Вы знаете, что вам хочется больше заботы о себе — но снова находите более срочные дела.</p></div>
+            <div class="znakomo-card"><div class="znakomo-num">02</div><p>Пробуете начать: питание, спорт, уход, режим. А потом жизнь возвращается в привычный ритм.</p></div>
+            <div class="znakomo-card"><div class="znakomo-num">03</div><p>Сложно понять, с чего начать, когда советов слишком много и кажется, что менять нужно сразу всё.</p></div>
+            <div class="znakomo-card"><div class="znakomo-num">04</div><p>И забота о себе постепенно превращается в ещё один проект, который вы откладываете до «подходящего момента».</p></div>
         </div>
-        <div class="znakomo-quote">
-            <p>Возможно, вам не нужен новый список дел.<br>Вам нужно снова увидеть себя среди всего остального.</p>
-        </div>
+        <div class="znakomo-quote"><p>Возможно, вам не нужен новый список дел.<br>Вам нужно снова увидеть себя среди всего остального.</p></div>
     </div>
 </section>
 
@@ -538,9 +506,7 @@
                 <h3>Моя история трансформации началась в 20 лет</h3>
                 <p class="author-text">— с момента, когда я поняла, что больше не чувствую себя так, как хочу.</p>
                 <p class="author-text">За эти годы я много изучала и пробовала: получила образование в сфере фитнеса и управления фитнес-студиями, проходила обучение в коучинге, моделинге и актёрском мастерстве. Спорт и активный образ жизни помогли мне лучше почувствовать своё тело, состояние и то, как важно поддерживать себя не только внешне, но и внутренне.</p>
-                <div class="author-note">
-                    Я не обещаю повторить мой результат. Мне важнее дать вам возможность найти свой.<br><br>Более личную историю моего пути я оставила внутри самого Путеводителя.
-                </div>
+                <div class="author-note">Я не обещаю повторить мой результат. Мне важнее дать вам возможность найти свой.<br><br>Более личную историю моего пути я оставила внутри самого Путеводителя.</div>
             </div>
         </div>
     </div>
@@ -554,21 +520,9 @@
             <p>Вам не нужно делать всё сразу. Можно начать с одного раздела, попробовать то, что откликается, и вернуться к остальному позже.</p>
         </div>
         <div class="features-grid">
-            <div class="feature-card">
-                <h3 class="feature-title">Система, не мотивация</h3>
-                <p class="feature-subtitle">Маленькие понятные шаги</p>
-                <p class="feature-text">Не нужно «заставлять себя». Практики встроены в обычный день, в своём темпе — без перестройки всей жизни.</p>
-            </div>
-            <div class="feature-card">
-                <h3 class="feature-title">Тело и психология</h3>
-                <p class="feature-subtitle">Понимать себя, а не только себя менять</p>
-                <p class="feature-text">«Колесо самоценности», протокол «СТОП» и готовые скрипты границ помогают замечать свои потребности, причины привычных реакций и способы действовать по-другому.</p>
-            </div>
-            <div class="feature-card">
-                <h3 class="feature-title">Без давления</h3>
-                <p class="feature-subtitle">Реалистично, а не идеально</p>
-                <p class="feature-text">Тренировки дома или в зале — на ваш выбор. Питание — баланс, а не голод. Личный дневник-трекер помогает видеть прогресс и радоваться каждому маленькому шагу вперёд.</p>
-            </div>
+            <div class="feature-card"><h3 class="feature-title">Система, не мотивация</h3><p class="feature-subtitle">Маленькие понятные шаги</p><p class="feature-text">Не нужно «заставлять себя». Практики встроены в обычный день, в своём темпе — без перестройки всей жизни.</p></div>
+            <div class="feature-card"><h3 class="feature-title">Тело и психология</h3><p class="feature-subtitle">Понимать себя, а не только себя менять</p><p class="feature-text">«Колесо самоценности», протокол «СТОП» и готовые скрипты границ помогают замечать свои потребности, причины привычных реакций и способы действовать по-другому.</p></div>
+            <div class="feature-card"><h3 class="feature-title">Без давления</h3><p class="feature-subtitle">Реалистично, а не идеально</p><p class="feature-text">Тренировки дома или в зале — на ваш выбор. Питание — баланс, а не голод. Личный дневник-трекер помогает видеть прогресс и радоваться каждому маленькому шагу вперёд.</p></div>
         </div>
     </div>
 </section>
@@ -607,139 +561,13 @@
             <p>Семь модулей ведут от внутреннего состояния к телу, питанию, движению и дальнейшему продолжению. Но вам не обязательно открывать их все сразу — начните с того места, где вы сейчас.</p>
         </div>
         <div class="modules-list">
-            <div class="module-item">
-                <div class="module-header" onclick="toggleModule(this)">
-                    <div class="module-number">01</div>
-                    <div class="module-content-wrapper">
-                        <h3 class="module-title">Вернуть себя себе</h3>
-                        <p class="module-subtitle">Самооценка, границы и внутреннее состояние</p>
-                    </div>
-                    <div class="module-toggle">↓</div>
-                </div>
-                <div class="module-body">
-                    <div class="module-body-inner">
-                        <ul class="module-practices">
-                            <li>Три причины, почему вы всё время откладываете себя.</li>
-                            <li>«Колесо самоценности» — находим не всё сразу, а сначала самое слабое место.</li>
-                            <li>+ ещё 3 практики внутри Путеводителя</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-header" onclick="toggleModule(this)">
-                    <div class="module-number">02</div>
-                    <div class="module-content-wrapper">
-                        <h3 class="module-title">Начать день с себя</h3>
-                        <p class="module-subtitle">Утренние практики и настрой</p>
-                    </div>
-                    <div class="module-toggle">↓</div>
-                </div>
-                <div class="module-body">
-                    <div class="module-body-inner">
-                        <ul class="module-practices">
-                            <li>Тест на хронотип — находим ваше личное окно для практики.</li>
-                            <li>Ритуал, а не привычка — как создать своё утро со смыслом.</li>
-                            <li>+ ещё 3 практики внутри Путеводителя</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-header" onclick="toggleModule(this)">
-                    <div class="module-number">03</div>
-                    <div class="module-content-wrapper">
-                        <h3 class="module-title">Заботиться о теле</h3>
-                        <p class="module-subtitle">Массаж, инструменты и банные ритуалы</p>
-                    </div>
-                    <div class="module-toggle">↓</div>
-                </div>
-                <div class="module-body">
-                    <div class="module-body-inner">
-                        <ul class="module-practices">
-                            <li>Самомассаж лица — мягкая практика для расслабления лица и шеи.</li>
-                            <li>Сухой массаж тела щёткой — короткий ритуал перед душем.</li>
-                            <li>+ ещё 2 практики внутри Путеводителя</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-header" onclick="toggleModule(this)">
-                    <div class="module-number">04</div>
-                    <div class="module-content-wrapper">
-                        <h3 class="module-title">Ухаживать за собой</h3>
-                        <p class="module-subtitle">Кожа, волосы, руки и ногти</p>
-                    </div>
-                    <div class="module-toggle">↓</div>
-                </div>
-                <div class="module-body">
-                    <div class="module-body-inner">
-                        <ul class="module-practices">
-                            <li>Тест на тип кожи и подбор ухода под неё.</li>
-                            <li>Диагностика волос — определяем особенности и подбираем уход.</li>
-                            <li>+ ещё 2 практики внутри Путеводителя</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-header" onclick="toggleModule(this)">
-                    <div class="module-number">05</div>
-                    <div class="module-content-wrapper">
-                        <h3 class="module-title">Спокойнее относиться к питанию</h3>
-                        <p class="module-subtitle">Принцип тарелки, голод и готовые идеи</p>
-                    </div>
-                    <div class="module-toggle">↓</div>
-                </div>
-                <div class="module-body">
-                    <div class="module-body-inner">
-                        <ul class="module-practices">
-                            <li>Принцип тарелки вместо подсчёта калорий. Физический и эмоциональный голод.</li>
-                            <li>Завтраки, обеды и ужины — готовые идеи для повседневного меню.</li>
-                            <li>+ ещё 2 практики внутри Путеводителя</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-header" onclick="toggleModule(this)">
-                    <div class="module-number">06</div>
-                    <div class="module-content-wrapper">
-                        <h3 class="module-title">Вернуть тело в движение</h3>
-                        <p class="module-subtitle">Тренировки, сила, осанка и мобильность</p>
-                    </div>
-                    <div class="module-toggle">↓</div>
-                </div>
-                <div class="module-body">
-                    <div class="module-body-inner">
-                        <ul class="module-practices">
-                            <li>Инструмент, без которого сложно идти дальше — начинаем с подготовки себя к движению.</li>
-                            <li>10 минут, чтобы подготовить тело к работе — лёгкое кардио и суставная разминка.</li>
-                            <li>+ ещё 3 практики внутри Путеводителя</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-header" onclick="toggleModule(this)">
-                    <div class="module-number">07</div>
-                    <div class="module-content-wrapper">
-                        <h3 class="module-title">Вдохновение для продолжения</h3>
-                        <p class="module-subtitle">Книги, фильмы и финальные материалы</p>
-                    </div>
-                    <div class="module-toggle">↓</div>
-                </div>
-                <div class="module-body">
-                    <div class="module-body-inner">
-                        <ul class="module-practices">
-                            <li>Вдохновение для роста: книги о саморазвитии, мышлении, границах и женской силе.</li>
-                            <li>Подборка фильмов о пути к себе, мотивации и трансформации.</li>
-                            <li>+ ещё 2 практики внутри Путеводителя</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <div class="module-item"><div class="module-header" onclick="toggleModule(this)"><div class="module-number">01</div><div class="module-content-wrapper"><h3 class="module-title">Вернуть себя себе</h3><p class="module-subtitle">Самооценка, границы и внутреннее состояние</p></div><div class="module-toggle">↓</div></div><div class="module-body"><div class="module-body-inner"><ul class="module-practices"><li>Три причины, почему вы всё время откладываете себя.</li><li>«Колесо самоценности» — находим не всё сразу, а сначала самое слабое место.</li><li>+ ещё 3 практики внутри Путеводителя</li></ul></div></div></div>
+            <div class="module-item"><div class="module-header" onclick="toggleModule(this)"><div class="module-number">02</div><div class="module-content-wrapper"><h3 class="module-title">Начать день с себя</h3><p class="module-subtitle">Утренние практики и настрой</p></div><div class="module-toggle">↓</div></div><div class="module-body"><div class="module-body-inner"><ul class="module-practices"><li>Тест на хронотип — находим ваше личное окно для практики.</li><li>Ритуал, а не привычка — как создать своё утро со смыслом.</li><li>+ ещё 3 практики внутри Путеводителя</li></ul></div></div></div>
+            <div class="module-item"><div class="module-header" onclick="toggleModule(this)"><div class="module-number">03</div><div class="module-content-wrapper"><h3 class="module-title">Заботиться о теле</h3><p class="module-subtitle">Массаж, инструменты и банные ритуалы</p></div><div class="module-toggle">↓</div></div><div class="module-body"><div class="module-body-inner"><ul class="module-practices"><li>Самомассаж лица — мягкая практика для расслабления лица и шеи.</li><li>Сухой массаж тела щёткой — короткий ритуал перед душем.</li><li>+ ещё 2 практики внутри Путеводителя</li></ul></div></div></div>
+            <div class="module-item"><div class="module-header" onclick="toggleModule(this)"><div class="module-number">04</div><div class="module-content-wrapper"><h3 class="module-title">Ухаживать за собой</h3><p class="module-subtitle">Кожа, волосы, руки и ногти</p></div><div class="module-toggle">↓</div></div><div class="module-body"><div class="module-body-inner"><ul class="module-practices"><li>Тест на тип кожи и подбор ухода под неё.</li><li>Диагностика волос — определяем особенности и подбираем уход.</li><li>+ ещё 2 практики внутри Путеводителя</li></ul></div></div></div>
+            <div class="module-item"><div class="module-header" onclick="toggleModule(this)"><div class="module-number">05</div><div class="module-content-wrapper"><h3 class="module-title">Спокойнее относиться к питанию</h3><p class="module-subtitle">Принцип тарелки, голод и готовые идеи</p></div><div class="module-toggle">↓</div></div><div class="module-body"><div class="module-body-inner"><ul class="module-practices"><li>Принцип тарелки вместо подсчёта калорий. Физический и эмоциональный голод.</li><li>Завтраки, обеды и ужины — готовые идеи для повседневного меню.</li><li>+ ещё 2 практики внутри Путеводителя</li></ul></div></div></div>
+            <div class="module-item"><div class="module-header" onclick="toggleModule(this)"><div class="module-number">06</div><div class="module-content-wrapper"><h3 class="module-title">Вернуть тело в движение</h3><p class="module-subtitle">Тренировки, сила, осанка и мобильность</p></div><div class="module-toggle">↓</div></div><div class="module-body"><div class="module-body-inner"><ul class="module-practices"><li>Инструмент, без которого сложно идти дальше — начинаем с подготовки себя к движению.</li><li>10 минут, чтобы подготовить тело к работе — лёгкое кардио и суставная разминка.</li><li>+ ещё 3 практики внутри Путеводителя</li></ul></div></div></div>
+            <div class="module-item"><div class="module-header" onclick="toggleModule(this)"><div class="module-number">07</div><div class="module-content-wrapper"><h3 class="module-title">Вдохновение для продолжения</h3><p class="module-subtitle">Книги, фильмы и финальные материалы</p></div><div class="module-toggle">↓</div></div><div class="module-body"><div class="module-body-inner"><ul class="module-practices"><li>Вдохновение для роста: книги о саморазвитии, мышлении, границах и женской силе.</li><li>Подборка фильмов о пути к себе, мотивации и трансформации.</li><li>+ ещё 2 практики внутри Путеводителя</li></ul></div></div></div>
         </div>
     </div>
 </section>
@@ -752,21 +580,9 @@
             <p>Путеводитель остаётся с вами. Можно читать, пробовать, пропускать и возвращаться — без отчётов и гонки за идеальным прохождением.</p>
         </div>
         <div class="how-grid">
-            <div class="how-card">
-                <h3 class="how-title">Telegram</h3>
-                <p class="how-subtitle">Весь путь — в одном месте</p>
-                <p class="how-text">Все семь модулей находятся в закрытом Telegram-канале. Рядом — отдельный чат для общения. Вы проходите материалы в своём темпе, а доступ сохраняется навсегда.</p>
-            </div>
-            <div class="how-card">
-                <h3 class="how-title">Практика</h3>
-                <p class="how-subtitle">Не только теория</p>
-                <p class="how-text">Тесты, дневники, протоколы, скрипты, дыхание, медитация, тренировки, меню, рецепты и готовые рекомендации — материалы можно сразу применять в обычной жизни.</p>
-            </div>
-            <div class="how-card">
-                <h3 class="how-title">Темп</h3>
-                <p class="how-subtitle">Без гонки и «идеального прохождения»</p>
-                <p class="how-text">Не нужно успеть всё за определённый срок. Можно пройти путь целиком или возвращаться к отдельным модулям тогда, когда они становятся актуальны.</p>
-            </div>
+            <div class="how-card"><h3 class="how-title">Telegram</h3><p class="how-subtitle">Весь путь — в одном месте</p><p class="how-text">Все семь модулей находятся в закрытом Telegram-канале. Рядом — отдельный чат для общения. Вы проходите материалы в своём темпе, а доступ сохраняется навсегда.</p></div>
+            <div class="how-card"><h3 class="how-title">Практика</h3><p class="how-subtitle">Не только теория</p><p class="how-text">Тесты, дневники, протоколы, скрипты, дыхание, медитация, тренировки, меню, рецепты и готовые рекомендации — материалы можно сразу применять в обычной жизни.</p></div>
+            <div class="how-card"><h3 class="how-title">Темп</h3><p class="how-subtitle">Без гонки и «идеального прохождения»</p><p class="how-text">Не нужно успеть всё за определённый срок. Можно пройти путь целиком или возвращаться к отдельным модулям тогда, когда они становятся актуальны.</p></div>
         </div>
     </div>
 </section>
@@ -783,10 +599,7 @@
                 <p class="telegram-note">Все семь модулей открываются сразу после оплаты. Вы можете начать с первого или открыть тот, который нужен вам сейчас.</p>
             </div>
             <div class="telegram-mockup">
-                <div class="telegram-header">
-                    <div class="telegram-header-icon">✈</div>
-                    <div class="telegram-header-text">Telegram · Я выбираю себя<small>0/7 разделов пройдено</small></div>
-                </div>
+                <div class="telegram-header"><div class="telegram-header-icon">✈</div><div class="telegram-header-text">Telegram · Я выбираю себя<small>0/7 разделов пройдено</small></div></div>
                 <div class="telegram-progress">✦ Начните с первого шага</div>
                 <ul class="telegram-modules">
                     <li class="done">✓ 01. Вернуть себя себе Пройдено</li>
@@ -820,30 +633,16 @@
             <h2>Не обещания, а то, на что можно опираться</h2>
         </div>
         <div class="get-grid">
-            <div class="get-card">
-                <h3 class="get-title">Внутреннее состояние</h3>
-                <p class="get-text">Лучше понимать, почему вы откладываете себя, замечать свои потребности и учиться ставить границы.</p>
-            </div>
-            <div class="get-card">
-                <h3 class="get-title">Ежедневные практики</h3>
-                <p class="get-text">Собрать собственный утренний ритуал и несколько коротких практик, к которым легко возвращаться.</p>
-            </div>
-            <div class="get-card">
-                <h3 class="get-title">Тело и питание</h3>
-                <p class="get-text">Двигаться, ухаживать за собой и организовывать питание без идеи, что всё нужно делать идеально.</p>
-            </div>
-            <div class="get-card">
-                <h3 class="get-title">Система</h3>
-                <p class="get-text">Иметь под рукой материалы, к которым можно возвращаться тогда, когда вам нужна поддержка.</p>
-            </div>
+            <div class="get-card"><h3 class="get-title">Внутреннее состояние</h3><p class="get-text">Лучше понимать, почему вы откладываете себя, замечать свои потребности и учиться ставить границы.</p></div>
+            <div class="get-card"><h3 class="get-title">Ежедневные практики</h3><p class="get-text">Собрать собственный утренний ритуал и несколько коротких практик, к которым легко возвращаться.</p></div>
+            <div class="get-card"><h3 class="get-title">Тело и питание</h3><p class="get-text">Двигаться, ухаживать за собой и организовывать питание без идеи, что всё нужно делать идеально.</p></div>
+            <div class="get-card"><h3 class="get-title">Система</h3><p class="get-text">Иметь под рукой материалы, к которым можно возвращаться тогда, когда вам нужна поддержка.</p></div>
         </div>
         <div class="author-quote-final">
             <blockquote>«Я собрала в этот путеводитель всё, что реально сработало для меня за годы пути — без лишнего и без давления.»</blockquote>
             <cite>— Леночка Кузовлёва, автор</cite>
         </div>
-        <div class="what-you-get-note">
-            <p>Не обязательно менять всё. Иногда достаточно заметить одну свою потребность и наконец дать ей место.<br>К разным разделам можно возвращаться в разные периоды жизни — потому что вам не всегда нужно одно и то же.</p>
-        </div>
+        <div class="what-you-get-note"><p>Не обязательно менять всё. Иногда достаточно заметить одну свою потребность и наконец дать ей место.<br>К разным разделам можно возвращаться в разные периоды жизни — потому что вам не всегда нужно одно и то же.</p></div>
     </div>
 </section>
 
@@ -856,10 +655,7 @@
         </div>
         <div class="pricing-card">
             <div class="pricing-card-header">
-                <div>
-                    <div class="pricing-card-title">Путеводитель</div>
-                    <p style="color: var(--text-soft); margin-top: 8px;">Полный доступ ко всем 7 модулям</p>
-                </div>
+                <div><div class="pricing-card-title">Путеводитель</div><p style="color: var(--text-soft); margin-top: 8px;">Полный доступ ко всем 7 модулям</p></div>
                 <div class="pricing-card-price">3 990 ₽</div>
             </div>
             <ul class="pricing-features">
@@ -876,55 +672,19 @@
 
 <section class="faq" id="faq">
     <div class="container">
-        <div class="faq-header">
-            <span class="section-label">Вопросы</span>
-            <h2>Отвечаем заранее</h2>
-        </div>
+        <div class="faq-header"><span class="section-label">Вопросы</span><h2>Отвечаем заранее</h2></div>
         <div class="faq-list">
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>У меня правда нет времени</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Вам не нужно выделять час в день. Внутри много коротких практик, а сам путеводитель можно проходить в своём темпе.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Я уже пробовала похожее и бросала — чем это отличается?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Здесь нет требования пройти всё идеально: материалы можно брать небольшими шагами и возвращаться к ним снова.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Мне обязательно выполнять все практики?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Нет. Это не список обязательных заданий. Вы выбираете то, что подходит вам сейчас, и постепенно находите свой способ заботиться о себе.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Это программа для похудения?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Похудение не является основной целью путеводителя. Здесь фокус на отношении к себе, движении, питании, уходе и ежедневной заботе о себе.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Это про «просто полюбить себя» и эзотерику?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Нет. Внутри конкретные инструменты: «Колесо самоценности», протокол «СТОП», скрипты границ, тесты, практики, тренировки, уход и питание.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Мне обязательно тренироваться?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Нет. Тренировки — одна из частей системы. Вы можете начать с внутренней работы, утренних практик, питания или ухода.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>А если я пропущу несколько дней?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Ничего. Это не марафон с отчётами. Просто возвращаетесь к путеводителю тогда, когда готовы.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Нужна ли подготовка или опыт?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Нет. Материалы рассчитаны на самостоятельное прохождение и объясняются пошагово.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>В каком формате я получу доступ?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Путеводитель находится в закрытом Telegram-канале. Рядом есть отдельный чат для общения. Доступ к материалам сохраняется без ограничения по времени.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Материалы останутся у меня навсегда?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">Да, доступ к материалам сохраняется без ограничения по времени.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)"><span>Когда я замечу изменения?</span><div class="faq-toggle">+</div></div>
-                <div class="faq-answer"><div class="faq-answer-inner">У каждой по-разному. Цель путеводителя — не обещать конкретный результат за определённое число дней, а помочь выстроить действия, к которым вы сможете возвращаться регулярно.</div></div>
-            </div>
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>У меня правда нет времени</span><div class="faq-toggle">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Вам не нужно выделять час в день. Внутри много коротких практик, а сам путеводитель можно проходить в своём темпе.</div></div></div>
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Я уже пробовала похожее и бросала — чем это отличается?</span><div class="faq-toggle">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Здесь нет требования пройти всё идеально: материалы можно брать небольшими шагами и возвращаться к ним снова.</div></div></div>
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Мне обязательно выполнять все практики?</span><div class="faq-toggle">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Нет. Это не список обязательных заданий. Вы выбираете то, что подходит вам сейчас, и постепенно находите свой способ заботиться о себе.</div></div></div>
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Это программа для похудения?</span><div class="faq-toggle">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Похудение не является основной целью путеводителя. Здесь фокус на отношении к себе, движении, питании, уходе и ежедневной заботе о себе.</div></div></div>
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Это про «просто полюбить себя» и эзотерику?</span><div class="faq-toggle">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Нет. Внутри конкретные инструменты: «Колесо самоценности», протокол «СТОП», скрипты границ, тесты, практики, тренировки, уход и питание.</div></div></div>
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Мне обязательно тренироваться?</span><div class="faq-toggle">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Нет. Тренировки — одна из частей системы. Вы можете начать с внутренней работы, утренних практик, питания или ухода.</div></div></div>
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>А если я пропущу несколько дней?</span><div class="faq-toggle">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Ничего. Это не марафон с отчётами. Просто возвращаетесь к путеводителю тогда, когда готовы.</div></div></div>
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Нужна ли подготовка или опыт?</span><div class="faq-toggle">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Нет. Материалы рассчитаны на самостоятельное прохождение и объясняются пошагово.</div></div></div>
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>В каком формате я получу доступ?</span><div class="faq-toggle">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Путеводитель находится в закрытом Telegram-канале. Рядом есть отдельный чат для общения. Доступ к материалам сохраняется без ограничения по времени.</div></div></div>
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Материалы останутся у меня навсегда?</span><div class="faq-toggle">+</div></div><div class="faq-answer"><div class="faq-answer-inner">Да, доступ к материалам сохраняется без ограничения по времени.</div></div></div>
+            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Когда я замечу изменения?</span><div class="faq-toggle">+</div></div><div class="faq-answer"><div class="faq-answer-inner">У каждой по-разному. Цель путеводителя — не обещать конкретный результат за определённое число дней, а помочь выстроить действия, к которым вы сможете возвращаться регулярно.</div></div></div>
         </div>
     </div>
 </section>
@@ -954,12 +714,12 @@
             </nav>
             <div class="footer-social">
                 <a href="https://t.me/choicemeofficialbot?start=landing" target="_blank" rel="noopener" aria-label="Telegram-бот">✈</a>
-                <a href="#" aria-label="Instagram"></a>
+                <a href="#" aria-label="Instagram">📷</a>
             </div>
         </div>
         <div class="footer-bottom">
             <p class="footer-copy">© 2026 · платформа для женщин, которые возвращаются к себе</p>
-            <p class="footer-tagline">Забота о себе — это не роскошь, а необходимость ♡</p>
+            <p class="footer-tagline">Забота о себе — это не роскошь, а необходимость </p>
         </div>
     </div>
 </footer>
@@ -971,20 +731,17 @@ function toggleModule(header) {
     document.querySelectorAll('.module-item').forEach(m => m.classList.remove('active'));
     if (!isActive) item.classList.add('active');
 }
-
 function toggleFaq(question) {
     const item = question.parentElement;
     const isActive = item.classList.contains('active');
     document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('active'));
     if (!isActive) item.classList.add('active');
 }
-
 const mobileToggle = document.querySelector('.mobile-toggle');
 const navMenu = document.querySelector('.nav-menu');
 mobileToggle.addEventListener('click', () => {
-    if (navMenu.style.display === 'flex') {
-        navMenu.style.display = 'none';
-    } else {
+    if (navMenu.style.display === 'flex') { navMenu.style.display = 'none'; }
+    else {
         navMenu.style.display = 'flex';
         navMenu.style.flexDirection = 'column';
         navMenu.style.position = 'absolute';
