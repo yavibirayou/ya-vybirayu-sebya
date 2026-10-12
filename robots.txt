@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yavibirayou.github.io/ya-vybirayu-sebya/sitemap.xml
